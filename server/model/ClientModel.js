@@ -1,33 +1,38 @@
+//Cliente
 const mongoose = require('mongoose');
 
-const clienteSchema = new mongoose.Schema({
-    cliente_Id: {
+const clientSchema = new mongoose.Schema({
+    clientId: {
         type: mongoose.Schema.objectId,
     },
-    nombre: {
+    name: {
         type:String,
         required:true,
         trim:true,
     }, 
-    apellido: {
+    lastname: {
         type:String,
         required:true,
     },
-    telefono: {
+    password: {
+        type: String,
+        required: [true, 'porfavor enter en la contraseña'],
+    }, 
+    phone: {
         type:String,
         required:true,
     },
-    direccion: {
+    address: {
         type:String,
-        require:false,
+        required:false,
         trim:true
     },
-    correo: {
+    email: {
         type:String,
         required:true,
         unique:true,
     },
-    pais: {
+    country: {
         type:String,
     },
     status : {
@@ -40,5 +45,5 @@ const clienteSchema = new mongoose.Schema({
 }
 );
 
-const Cliente = mongoose.model('cliente', clienteSchema);
-module.exports = {Cliente}
+const Client = mongoose.model('client', clientSchema);
+module.exports = {Client}

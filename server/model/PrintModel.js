@@ -1,7 +1,8 @@
+//Estampado
 const mongoose = require('mongoose');
 
-const estampadoSchema = new mongoose.Schema({
-    tipoEstampado_Id: {
+const printSchema = new mongoose.Schema({
+    TypePrintId: {
         type: mongoose.Schema.objectId,
     },
     central: {
@@ -10,7 +11,7 @@ const estampadoSchema = new mongoose.Schema({
     logo: {
         type:String,
     },
-    completo: {
+    full: {
         type:String,
     },
     status : {
@@ -23,5 +24,5 @@ const estampadoSchema = new mongoose.Schema({
 }
 );
 
-const Estampado = mongoose.model('estampado', estampadoSchema);
-module.exports = {Estampado}
+const Print = mongoose.model('print', printSchema);
+module.exports = {Print}

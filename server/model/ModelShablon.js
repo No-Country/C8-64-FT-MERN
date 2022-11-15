@@ -1,13 +1,14 @@
+// Shablon
 const mongoose = require('mongoose');
 
 const shablonSchema = new mongoose.Schema({
     shablon_Id: {
         type: mongoose.Schema.objectId,
     },
-    nuevo: {
+    new: {
         type:String,
     },
-    usado: {
+    used: {
         type:String,
     },
     status : {

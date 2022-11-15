@@ -1,19 +1,29 @@
+//pintura
 const mongoose = require('mongoose');
 
-const tipoPinturaSchema = new mongoose.Schema({
-    pintura_Id: {
+const paintTypeSchema = new mongoose.Schema({
+    pinturaId: {
         type: mongoose.Schema.objectId,
     },
     plastisol: {
         type:String,
     },
-    pintura_al_agua: {
+    WaterPaint: {
         type:String,
     },
     relieve: {
         type:String,
     },
     foil: {
+        type:String,
+    },
+    glitter: {
+        type:String,
+    },
+    corrosion: {
+        type:String,
+    },
+    gold_and_silver: {
         type:String,
     },
     status : {
@@ -26,5 +36,5 @@ const tipoPinturaSchema = new mongoose.Schema({
 }
 );
 
-const Pintura = mongoose.model('pintura', tipoPinturaSchema);
-module.exports = {Pintura}
+const Paint = mongoose.model('paint', paintTypeSchema);
+module.exports = {Paint}

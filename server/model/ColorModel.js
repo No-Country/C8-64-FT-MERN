@@ -1,19 +1,20 @@
+//Color
 const mongoose = require('mongoose');
 
 const colorSchema = new mongoose.Schema({
-    color_Id: {
+    colorId: {
         type: mongoose.Schema.objectId,
     },
-    color_1: {
+    color1: {
         type:String,
     },
-    color_2: {
+    color2: {
         type:String,
     },
-    color_3: {
+    color3: {
         type:String,
     },
-    color_4: {
+    color4: {
         type:String,
     },  
     status : {

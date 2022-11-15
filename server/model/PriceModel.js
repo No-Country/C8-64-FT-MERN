@@ -1,11 +1,13 @@
+//Precio
 const mongoose = require('mongoose');
 
-const prendaSchema = new mongoose.Schema({
-    prenda_Id: {
+const priceSchema = new mongoose.Schema({
+    priceId: {
         type: mongoose.Schema.objectId,
     },
-    precio: {
+    price: {
         type:String,
+        required: true,
     }, 
     status : {
         type: String,
@@ -17,5 +19,5 @@ const prendaSchema = new mongoose.Schema({
 }
 );
 
-const Prenda = mongoose.model('prenda', prendaSchema);
-module.exports = {Prenda}
+const Price = mongoose.model('precio', priceSchema);
+module.exports = {Price}

@@ -1,34 +1,35 @@
+//Cotizacion
 const mongoose = require('mongoose');
 
-const cotizacionSchema = new mongoose.Schema({
-    cotizacion_Id: {
+const quotationSchema = new mongoose.Schema({
+    quotationId: {
         type: mongoose.Schema.objectId,
     },
-    tipo_fondo: {
+    backgroundType: {
         type:String,
         required:true,
     }, 
-    tipo_estampa: {
+    PrintType: {
         type:String,
         required:true,
     },
-    tipo_pintura: {
+    PaintType: {
         type:String,
         required:true,
     },
-    tipo_shablon: {
+    shablonType: {
         type:String,
         required:true,
     },
-    cantidad_color: {
+    QuantityColor: {
         type:String,
         required:true,
     },
-    cantidad_prenda: {
+    QuantityPrint: {
         type:String,
         required:true,
     },
-    precio: {
+    price: {
         type:String,
         required:true,
     },
@@ -42,5 +43,5 @@ const cotizacionSchema = new mongoose.Schema({
 }
 );
 
-const Cotizacion = mongoose.model('cotizacion', cotizacionSchema);
-module.exports = {Cotizacion}
+const Quotation = mongoose.model('quotation', quotationSchema);
+module.exports = {Quotation}

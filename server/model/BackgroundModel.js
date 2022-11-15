@@ -1,13 +1,14 @@
+//Tipo Fondo
 const mongoose = require('mongoose');
 
-const tipoFondoSchema = new mongoose.Schema({
-    tipoFondo_Id: {
+const BackgroundSchema = new mongoose.Schema({
+    TypeBackgroundId: {
         type: mongoose.Schema.objectId,
     },
-    claro: {
+    light: {
         type:String,
     },
-    oscuro: {
+    dark: {
         type:String,
     },
     status : {
@@ -20,5 +21,5 @@ const tipoFondoSchema = new mongoose.Schema({
 }
 );
 
-const Fondo = mongoose.model('fondo', tipoFondoSchema);
-module.exports = {Fondo}
+const Background = mongoose.model('Background', BackgroundSchema);
+module.exports = {Background}
