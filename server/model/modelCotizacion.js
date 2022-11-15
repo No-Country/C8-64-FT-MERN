@@ -6,31 +6,31 @@ const cotizacionSchema = new mongoose.Schema({
     },
     tipo_fondo: {
         type:String,
-        require:true,
+        required:true,
     }, 
     tipo_estampa: {
         type:String,
-        require:true,
+        required:true,
     },
     tipo_pintura: {
         type:String,
-        require:true,
+        required:true,
     },
     tipo_shablon: {
         type:String,
-        require:true,
+        required:true,
     },
     cantidad_color: {
         type:String,
-        require:true,
+        required:true,
     },
     cantidad_prenda: {
         type:String,
-        require:true,
+        required:true,
     },
     precio: {
         type:String,
-        require:true,
+        required:true,
     },
     status : {
         type: String,

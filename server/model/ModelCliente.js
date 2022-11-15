@@ -6,16 +6,16 @@ const clienteSchema = new mongoose.Schema({
     },
     nombre: {
         type:String,
-        require:true,
+        required:true,
         trim:true,
     }, 
     apellido: {
         type:String,
-        require:true,
+        required:true,
     },
     telefono: {
         type:String,
-        require:true,
+        required:true,
     },
     direccion: {
         type:String,
@@ -24,7 +24,7 @@ const clienteSchema = new mongoose.Schema({
     },
     correo: {
         type:String,
-        require:true,
+        required:true,
         unique:true,
     },
     pais: {
