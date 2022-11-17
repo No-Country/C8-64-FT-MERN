@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 const paintTypeSchema = new mongoose.Schema({
-    pinturaId: {
+    paintId: {
         type: mongoose.Schema.objectId,
     },
     plastisol: {

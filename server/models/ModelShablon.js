@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 const shablonSchema = new mongoose.Schema({
-    shablon_Id: {
+    shablonId: {
         type: mongoose.Schema.objectId,
     },
     new: {

@@ -5,8 +5,9 @@ const GarmentSchema = new mongoose.Schema({
     garmentId: {
         type: mongoose.Schema.objectId,
     },
-    price: {
-        type:String,
+    quantity: {
+        type:number,
+        required:true,
     }, 
     status : {
         type: String,
@@ -20,3 +21,6 @@ const GarmentSchema = new mongoose.Schema({
 
 const Garment = mongoose.model('prenda', GarmentSchema);
 module.exports = {Garment}
+
+
+quantity_garments

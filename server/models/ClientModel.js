@@ -7,20 +7,20 @@ const clientSchema = new mongoose.Schema({
     },
     name: {
         type:String,
-        required:true,
+        required:[true, 'please provide a valid name'],
         trim:true,
     }, 
     lastname: {
         type:String,
-        required:true,
+        required:[true, 'please provide a valid lastname'],
     },
     password: {
-        type: String,
-        required: [true, 'porfavor enter en la contraseña'],
+        type: String, 
+        required: [true, 'please provide a valid password'],
     }, 
     phone: {
         type:String,
-        required:true,
+        required:false,
     },
     address: {
         type:String,
@@ -29,11 +29,18 @@ const clientSchema = new mongoose.Schema({
     },
     email: {
         type:String,
-        required:true,
+        required:[true, 'please provide a valid email'],
         unique:true,
     },
-    country: {
-        type:String,
+    address: {
+        country:{
+            type:String,
+            required:[true, 'must provide a valid country'],
+        },
+        state: {
+            type:String,
+            required: [false, 'must provide a valid state'],
+        }
     },
     status : {
         type: String,
