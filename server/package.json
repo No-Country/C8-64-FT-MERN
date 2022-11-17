@@ -4,11 +4,12 @@
   "description": "Cotizacion de la aplicacion por parte del BACKEND",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon index.js"
   },
   "author": "Gabriel mancilla Ducuara , Facundo , Fabricio",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.7.2"
