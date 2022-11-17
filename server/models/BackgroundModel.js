@@ -1,15 +1,18 @@
-//Tipo Fondo
+//Modelo Tipo Fondo
 const mongoose = require('mongoose');
 
 const BackgroundSchema = new mongoose.Schema({
     TypeBackgroundId: {
-        type: mongoose.Schema.objectId,
+        type: mongoose.Schema.ObjectId,
+        ref:'Quotation',
     },
     light: {
         type:String,
+        required:false,
     },
     dark: {
         type:String,
+        required: false,
     },
     status : {
         type: String,

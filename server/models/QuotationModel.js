@@ -1,9 +1,10 @@
-//Cotizacion
+// Modelo Cotizacion
 const mongoose = require('mongoose');
 
 const quotationSchema = new mongoose.Schema({
     quotationId: {
-        type: mongoose.Schema.objectId,
+        type: mongoose.Schema.ObjectId,
+        ref:'Client',
     },
     backgroundType: {
         type:String,
@@ -43,5 +44,5 @@ const quotationSchema = new mongoose.Schema({
 }
 );
 
-const Quotation = mongoose.model('quotation', quotationSchema);
+const Quotation = mongoose.model('Quotation', quotationSchema);
 module.exports = {Quotation}

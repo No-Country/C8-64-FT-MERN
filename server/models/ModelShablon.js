@@ -1,15 +1,18 @@
-// Shablon
+//Modelo Shablon
 const mongoose = require('mongoose');
 
 const shablonSchema = new mongoose.Schema({
     shablonId: {
-        type: mongoose.Schema.objectId,
+        type: mongoose.Schema.ObjectId,
+        ref:'Quotation',
     },
     new: {
         type:String,
+        required:false,
     },
     used: {
         type:String,
+        required:false,
     },
     status : {
         type: String,
@@ -21,5 +24,5 @@ const shablonSchema = new mongoose.Schema({
 }
 );
 
-const Shablon = mongoose.model('shablon', shablonSchema);
+const Shablon = mongoose.model('Shablon', shablonSchema);
 module.exports = {Shablon}

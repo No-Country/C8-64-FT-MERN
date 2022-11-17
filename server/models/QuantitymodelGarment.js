@@ -1,9 +1,10 @@
-//Cantidad prenda
+//Modelo Cantidad prenda
 const mongoose = require('mongoose');
 
 const GarmentSchema = new mongoose.Schema({
     garmentId: {
-        type: mongoose.Schema.objectId,
+        type: mongoose.Schema.ObjectId,
+        ref:'Quotation',
     },
     quantity: {
         type:number,
@@ -19,8 +20,6 @@ const GarmentSchema = new mongoose.Schema({
 }
 );
 
-const Garment = mongoose.model('prenda', GarmentSchema);
+const Garment = mongoose.model('Garment', GarmentSchema);
 module.exports = {Garment}
 
-
-quantity_garments

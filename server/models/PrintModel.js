@@ -1,18 +1,22 @@
-//Estampado
+//Modelo Estampado
 const mongoose = require('mongoose');
 
 const printSchema = new mongoose.Schema({
     TypePrintId: {
-        type: mongoose.Schema.objectId,
+        type: mongoose.Schema.ObjectId,
+        ref:'Quotation',
     },
     central: {
         type:String,
+        required:false,
     },
     logo: {
         type:String,
+        required:false,
     },
     full: {
         type:String,
+        required:false,
     },
     status : {
         type: String,
@@ -24,5 +28,5 @@ const printSchema = new mongoose.Schema({
 }
 );
 
-const Print = mongoose.model('print', printSchema);
+const Print = mongoose.model('Print', printSchema);
 module.exports = {Print}

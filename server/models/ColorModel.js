@@ -1,21 +1,26 @@
-//Color
+//Modelo Color
 const mongoose = require('mongoose');
 
 const colorSchema = new mongoose.Schema({
     colorId: {
-        type: mongoose.Schema.objectId,
+        type: mongoose.Schema.ObjectId,
+        ref:'Quotation',
     },
     color1: {
         type:String,
+        required:false,
     },
     color2: {
         type:String,
+        required:false,
     },
     color3: {
         type:String,
+        required:false,
     },
     color4: {
         type:String,
+        required:false,
     },  
     status : {
         type: String,
@@ -27,5 +32,5 @@ const colorSchema = new mongoose.Schema({
 }
 );
 
-const Color = mongoose.model('color', colorSchema);
+const Color = mongoose.model('Color', colorSchema);
 module.exports = {Color}

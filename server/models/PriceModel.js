@@ -1,9 +1,10 @@
-//Precio
+//Modelo Precio
 const mongoose = require('mongoose');
 
 const priceSchema = new mongoose.Schema({
     priceId: {
-        type: mongoose.Schema.objectId,
+        type: mongoose.Schema.ObjectId,
+        ref:'Quotation',
     },
     price: {
         type:String,
@@ -19,5 +20,5 @@ const priceSchema = new mongoose.Schema({
 }
 );
 
-const Price = mongoose.model('precio', priceSchema);
+const Price = mongoose.model('Price', priceSchema);
 module.exports = {Price}

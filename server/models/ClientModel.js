@@ -1,9 +1,9 @@
-//Cliente
+//Modelo Cliente
 const mongoose = require('mongoose');
 
 const clientSchema = new mongoose.Schema({
     clientId: {
-        type: mongoose.Schema.objectId,
+        type: mongoose.Schema.ObjectId,
     },
     name: {
         type:String,
@@ -52,5 +52,5 @@ const clientSchema = new mongoose.Schema({
 }
 );
 
-const Client = mongoose.model('client', clientSchema);
+const Client = mongoose.model('Client', clientSchema);
 module.exports = {Client}
