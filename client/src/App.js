@@ -1,16 +1,36 @@
-import logo from './nc-logo.png';
 import './App.css';
+import Colores from './components/Colores';
+import Cotizar from './components/Cotizar';
+import FondoPrenda from './components/FondoPrenda';
+import Header from './components/Header';
+import Tamano from './components/Tamano';
+import Tipo from './components/Tipo';
 
 function App() {
+
+  const opciones = {
+    fondo: "",
+    colores: "",
+    cantidad: "",
+    tamano: "",
+    tipo: ""
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        C8-64-FT-MERN
-        </p>
-       
-      </header>
+      <Header />
+      <div className='container app-container' >
+      <FondoPrenda opciones={opciones}/>
+      <Colores />
+      <Tamano />
+      <Tipo />
+      <Cotizar />
+
+      </div>
+      
+     
+      
     </div>
   );
 }
