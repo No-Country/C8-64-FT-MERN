@@ -7,18 +7,20 @@ import paraguay from "../assets/flags/paraguay.png"
 import spain from "../assets/flags/spain.png"
 import unitedS from "../assets/flags/united-states.png"
 import uruguay from "../assets/flags/uruguay.png"
+import logo from "../assets/Logo Fondo Oscuro.png"
 import { BoolHook } from "../hooks/BoolHook.js"
 import { useState } from "react"
 
 function Header() {
 
-    const [pais, setPais] = BoolHook(false);
+    const [pais, setPais] = BoolHook(true);
     const [activa, setActiva] = useState(argentina)
 
     return (
         <>
             <header>
-                <h1 className="app-title">COMPANY LOGO - COTIZADOR</h1>
+                
+            <img className="header-logo" src={logo} alt="" />
                 <img className="flag" src={activa} alt="" 
                 onClick={()=>setPais()} />
             </header>

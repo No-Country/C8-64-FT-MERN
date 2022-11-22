@@ -10,6 +10,10 @@
     margin-bottom: 15px;
 }
 
+.valor-dolar{
+    text-align: center;
+}
+
 .btn-cotizar{
     background-color: #e1a325;
     color: white;
@@ -25,7 +29,10 @@
     pointer-events: none;
 }
 
-.btn:hover{
-    background-color: aqua;
+.boton-prueba{
+    text-decoration: none;
 }
+
+
+
 

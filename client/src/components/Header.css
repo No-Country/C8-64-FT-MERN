@@ -4,17 +4,9 @@ header {
   height: 65px;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   -webkit-box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.75);
-  /* padding: 15px; */
-
-}
-
-.app-title {
-  font-size: .8rem;
-  margin-left: 15px;
 }
 
 .flag{
@@ -36,11 +28,14 @@ header {
   padding:15px;
   gap: 10px;
   transition: .5s;
-
-  
 }
 
 .flag-container{
   height: 40px;
   width: 40px;
+}
+
+.header-logo{
+  width: 150px;
+  margin-left: 15px;
 }
