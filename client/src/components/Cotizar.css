@@ -1,0 +1,38 @@
+.container-cotizar{
+    max-width: 360px;
+    
+}
+
+.checkbox-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.valor-dolar{
+    text-align: center;
+}
+
+.btn-cotizar{
+    background-color: #e1a325;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    /* width: 100px; */
+
+}
+
+.non-clickable{
+    pointer-events: none;
+}
+
+.boton-prueba{
+    text-decoration: none;
+}
+
+
+
+
