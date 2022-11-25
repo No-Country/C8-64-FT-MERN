@@ -11,16 +11,6 @@ app.use(cors())
 app.use(express.json())
 app.use(routes);
 
-//define endpoints
-//----------------router post 
-router.post('/post/base', router);
-//----------------router get
-router.get('/get/:id', router);
-//UPDATE BASE
-router.patch('/updateBase/:id', router);
-//conexion a la base de datos
-connect();
-
 app.get('/',  (req, res) => {
     res.json({msg: 'Bienvenido al proyecto en la parte del backend!'})
 })

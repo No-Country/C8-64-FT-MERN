@@ -1,0 +1,35 @@
+.input-numbers {
+  text-align: center;
+  font-size: 2rem;
+  border: none;
+  /* margin-left: 23px; */
+  background: none;
+  appearance: none;
+}
+
+.input-numbers:focus {
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  background: none;
+}
+
+.form-label {
+  font-size: 0.6rem;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.lapiz{
+  width: 70px;
+}

@@ -1,6 +1,11 @@
 const express = require('express');
+<<<<<<< HEAD
 // const { model } = require('mongoose');
 const {exportaBaseDatos} = require('../models/model');
+=======
+const {exportaBaseDatos} = require('../models/model');
+
+>>>>>>> 6d400461b7f028ab5eec5dd27a1281aafa464e77
 
 module.exports = {
     //-------------------POSTS----------------------------------
@@ -34,6 +39,7 @@ module.exports = {
             res.status(400).json({message: error.message})
         }
     },
+<<<<<<< HEAD
     //-------------------FINAL POST
     //----------------------------GETS----------------------------------- 
     getBase: async (req, res) => {
@@ -58,3 +64,30 @@ module.exports = {
         }
     },
 }
+=======
+    //-------------------FINAL POSTS----------------------------------
+    //----------------------------GETS----------------------------------- 
+    getBase: async (req, res) => {
+        try{
+            let id = req.params.id;
+            const data = await exportaBaseDatos.findOne({_id:id });
+            return res.json(data)
+        } catch(error) {
+            res.status(500).json({message: error.message})   
+        }
+    },
+    //----------------------------FINAL GETS----------------------------------- 
+    //----------------------------PATCHS----------------------------------- 
+    updateBase:  async (req, res) => {
+        try {
+            const id = req.params.id;
+            const updatedData = req.body;
+            const data = await exportaBaseDatos.findOneAndUpdate({_id:id},updatedData, { new: true });
+            return res.status(200).json({ success: true, data });
+        } catch (error) {
+            console.log('ERROR: ', error);
+            return res.status(400).json({ success: false });
+        }
+    },
+};
+>>>>>>> 6d400461b7f028ab5eec5dd27a1281aafa464e77
