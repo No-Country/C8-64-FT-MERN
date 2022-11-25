@@ -1,19 +1,30 @@
 const express = require('express');
-const {exportaModeloTipoShablon} = require('../models/model');
-const {exportaModeloTipoPrenda} = require('../models/model');
-const {exportaModeloTipoPinturaClaro} = require('../models/model');
-const {exportaModeloTipoPinturaOscuro} = require('../models/model');
-
-
+// const { model } = require('mongoose');
+const {exportaBaseDatos} = require('../models/model');
 
 module.exports = {
-
     //-------------------POSTS----------------------------------
-    //POST SHABLON
-    postShablon: async (req, res) => {
-        let data = new exportaModeloTipoShablon({
-            condicion: req.body.condicion,
-            valor: req.body.valor
+    postBase: async (req, res) => {
+        let data = new exportaBaseDatos({
+            shablon_borrado: req.body.shablon_borrado,
+            shablon_nuevo: req.body.shablon_nuevo,
+            shablon_usado: req.body.shablon_usado,
+            shablon_bajada: req.body.shablon_bajada,
+            shablon_grabado: req.body.shablon_grabado,
+            logo_claro: req.body.logo_claro,
+            central_claro: req.body.central_claro,
+            full_claro: req.body.full_claro,
+            logo_oscuro: req.body.logo_oscuro,
+            central_oscuro: req.body.central_oscuro,
+            full_oscuro: req.body.full_oscuro,
+            agua_fc: req.body.agua_fc,
+            agua_fo: req.body.agua_fo,
+            plastisol: req.body.plastisol,
+            relieve: req.body.relieve,
+            foil: req.body.foil,
+            glitter: req.body.glitter,
+            corrosion: req.body.corrosion,
+            dyp: req.body.dyp
         })
         try {
             const dataToSave = await data.save();
@@ -23,118 +34,27 @@ module.exports = {
             res.status(400).json({message: error.message})
         }
     },
-    //POST PRENDA
-    postPrenda: async (req, res) => {
-        let data = new exportaModeloTipoPrenda({
-            tipo: req.body.tipo,
-            valor: req.body.valor
-        })
-        try {
-            const dataToSave = await data.save();
-            res.status(200).json(dataToSave)
-        }
-        catch (error) {
-            res.status(400).json({message: error.message})
-        }
-    },
-    //POST PINTURA
-    postPinturaClaro: async (req, res) => {
-        let data = new exportaModeloTipoPinturaClaro({
-            nombre: req.body.nombre,
-            valor: req.body.valor
-        })
-        try {
-            const dataToSave = await data.save();
-            res.status(200).json(dataToSave)
-        }
-        catch (error) {
-            res.status(400).json({message: error.message})
-        }
-    },
-    postPinturaOscuro: async (req, res) => {
-        let data = new exportaModeloTipoPinturaOscuro({
-            nombre: req.body.nombre,
-            valor: req.body.valor
-        })
-        try {
-            const dataToSave = await data.save();
-            res.status(200).json(dataToSave)
-        }
-        catch (error) {
-            res.status(400).json({message: error.message})
-        }
-    },
-    //-------------------FINAL POSTS----------------------------------
-    //----------------------------GETS----------------------------------- (todos los gets devuelven el valor para poder hacer los calculos)
-    //GET PRENDA
-    getPrenda: async (req, res) => {
+    //-------------------FINAL POST
+    //----------------------------GETS----------------------------------- 
+    getBase: async (req, res) => {
         try{
-            const data = await exportaModeloTipoPrenda.findById(req.params.id);
-            res.json(data.valor)
-        }
-        catch(error){
-            res.status(500).json({message: error.message})
-        }
-    },
-    //GET SHABLON
-    getShablon: async (req, res) => {
-        try{
-            const data = await exportaModeloTipoShablon.findById(req.params.id);
-            res.json(data.valor)
-        }
-        catch(error){
-            res.status(500).json({message: error.message})
-        }
-    },
-    getPinturaClara: async (req, res) => {
-        try{
-            const data = await exportaModeloTipoPinturaClaro.findById(req.params.id);
-            res.json(data.valor)
-        }
-        catch(error){
-            res.status(500).json({message: error.message})
-        }
-    },
-    getPinturaOscura: async (req, res) => {
-        try{
-            const data = await exportaModeloTipoPinturaOscuro.findById(req.params.id);
-            res.json(data.valor)
-        }
-        catch(error){
-            res.status(500).json({message: error.message})
-        }
-    },
-    //----------------------------FINAL GETS----------------------------------- 
-    //----------------------------PATCHS----------------------------------- 
-    updateShablon:  async (req, res) => {
-        try {
             const id = req.params.id;
-            const updatedData = req.body;
-            const options = { new: true };
-            
-            const result = await exportaModeloTipoShablon.findByIdAndUpdate(
-                id, updatedData, options
-            )
-            res.send(result)
-        }
-        catch (error) {
-            res.status(400).json({ message: error.message })
+            const data = await exportaBaseDatos.findOne({_id:id});
+            return res.json(data)
+        } catch(error) {
+            res.status(500).json({message: error.message})   
         }
     },
-    updatePrenda:  async (req, res) => {
-        try {
-            const id = req.params.id;
-            const updatedData = req.body;
-            const options = { new: true };
-            
-            const result = await exportaModeloTipoPrenda.findByIdAndUpdate(
-                id, updatedData, options
-            )
-            res.send(result)
-        }
-        catch (error) {
-            res.status(400).json({ message: error.message })
-        }
-    }
     
-};
+    updateBase:  async (req, res) => {
+        try {
+            const id = req.params.id;
+            const updatedData = req.body;
+            const data = await exportaBaseDatos.findOneAndUpdate({_id:id},updatedData, { new: true });
+            return res.status(200).json({ success: true, data });
+        } catch (error) {
+            console.log('ERROR: ', error);
+            return res.status(400).json({ success: false });
+        }
+    },
+}

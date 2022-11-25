@@ -1,58 +1,84 @@
 const mongoose = require('mongoose');
 
-//TIPO DE PRENDA: CLARA U OSCURA Y VALOR
-const tipoPrenda = new mongoose.Schema({
-    tipo: {
-        required: true,
-        type: String
-    },
-    valor: {
+// base de datos mongodb
+const basedatos = new mongoose.Schema({
+    shablon_borrado: {
         required: true,
         type: Number
-    }
-})
-//TIPO SHABLON : NUEVO O USADO Y VALOR
-const tipoShablon = new mongoose.Schema({
-    condicion: {
-        required: true,
-        type: String
     },
-    valor: {
+    shablon_nuevo: {
         required: true,
         type: Number
-    }
-})
-//TIPO PINTURA : NOMBRE Y VALOR
-const tipoPinturaClaro = new mongoose.Schema({
-    nombre: {
-        required: true,
-        type: String
     },
-    valor: {
+    shablon_usado: {
         required: true,
         type: Number
-    }
-})
-const tipoPinturaOscuro = new mongoose.Schema({
-    nombre: {
-        required: true,
-        type: String
     },
-    valor: {
+    shablon_bajada: {
         required: true,
         type: Number
-    }
+    },
+    shablon_grabado: {
+        required: true,
+        type: Number
+    },
+    logo_claro: {
+        required: true,
+        type: Number
+    },
+    central_claro: {
+        required: true,
+        type: Number
+    },
+    full_claro: {
+        required: true,
+        type: Number
+    },
+    logo_oscuro: {
+        required: true,
+        type: Number
+    },
+    central_oscuro: {
+        required: true,
+        type: Number
+    },
+    full_oscuro: {
+        required: true,
+        type: Number
+    },
+    agua_fc: {
+        required: true,
+        type: Number
+    },
+    agua_fo: {
+        required: true,
+        type: Number
+    },
+    plastisol: {
+        required: true,
+        type: Number
+    },
+    relieve: {
+        required: true,
+        type: Number
+    },
+    foil: {
+        required: true,
+        type: Number
+    },
+    glitter: {
+        required: true,
+        type: Number
+    },
+    corrosion: {
+        required: true,
+        type: Number
+    },
+    dyp: {
+        required: true,
+        type: Number
+    },
 })
 
-
-
-
-
-
-var exportaModeloTipoPrenda = mongoose.model('prendas', tipoPrenda,'prendas');
-var exportaModeloTipoShablon = mongoose.model('shablon', tipoShablon,'shablon');
-var exportaModeloTipoPinturaClaro = mongoose.model('pinturaClaro', tipoPinturaClaro,'pinturaClaro');
-var exportaModeloTipoPinturaOscuro = mongoose.model('pinturaOscuro', tipoPinturaOscuro,'pinturaOscuro');
-
-
-module.exports = { exportaModeloTipoPrenda, exportaModeloTipoShablon, exportaModeloTipoPinturaClaro, exportaModeloTipoPinturaOscuro}
+let exportaBaseDatos = mongoose.model('base', basedatos,'base');
+module.exports = { exportaBaseDatos }
