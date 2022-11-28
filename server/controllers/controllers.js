@@ -5,6 +5,9 @@ module.exports = {
     //-------------------POSTS----------------------------------
     postBase: async (req, res) => {
         let data = new exportaBaseDatos({
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
             shablon_borrado: req.body.shablon_borrado,
             shablon_nuevo: req.body.shablon_nuevo,
             shablon_usado: req.body.shablon_usado,

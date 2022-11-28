@@ -2,6 +2,18 @@ const mongoose = require('mongoose');
 
 //TIPO DE PRENDA: CLARA U OSCURA Y VALOR
 const basedatos = new mongoose.Schema({
+    name: {
+        required: [true, 'Porfavor Digite su nombre'],
+        type: String,
+    },
+    email: {
+        required: [true, 'Porfavor Digite su correo'],
+        type: String,
+    },
+    password: {
+        required: [true, 'Porfavor Digite su Contraseña'],
+        type: String,
+    },
     shablon_borrado: {
         required: true,
         type: Number
