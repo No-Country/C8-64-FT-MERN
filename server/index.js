@@ -1,33 +1,38 @@
-// const { count } = require('console');
-const express = require('express');
-const env = require('./utils/envConfig')
-const connect = require('./utils/database.utils')
-const routes = require('./routes/routes');
+const bodyParser = require('body-parser');
+const { count } = require('console');
 const cors = require('cors');
+const express = require('express');
+const mongoose = require('mongoose');
+const routes = require('./routes/routes');
 const app = express();
-const router = express.Router()
 app.use(bodyParser.urlencoded({ extended: false}))
-
 app.use(bodyParser.json())
-app.use(cors())
-app.use(express.json())
-app.use(routes);
 
+app.set('view engine', 'ejs');
+require('dotenv').config();
 
-connect();
+//mongodb  
+mongoose.connect(process.env.MONGO_URL,
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(() => console.log('MongoDB Conectada'))
+    .catch(err => console.log(err)
+);
 
+const database = mongoose.connection
 
-app.get('/',  (req, res) => {
-    res.json({msg: 'Bienvenido al proyecto en la parte del backend!'})
+database.on('error', (error) => {
+    console.log(error)
 })
 
+database.once('connected', () => {
+    console.log('Database Connected');
+})
 
-app.listen(process.env.PORT, () => console.log('El back funcionara en el puerto:'+process.env.PORT));
+app.use(cors())
+app.use(express.json());
+app.use('/api', routes)
 
-
-
-// const port = env.PORT || 3000;
-
-// app.listen(port, () => {
-//     console.log(`El back funcionara en el puerto ${port}`)
-// })
+app.listen(process.env.PORT, () => console.log('Server on port:'+process.env.PORT)); 

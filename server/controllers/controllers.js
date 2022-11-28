@@ -1,6 +1,5 @@
-const express = require('express');
-// const { model } = require('mongoose');
 const {exportaBaseDatos} = require('../models/model');
+
 
 module.exports = {
     //-------------------POSTS----------------------------------
@@ -34,27 +33,29 @@ module.exports = {
             res.status(400).json({message: error.message})
         }
     },
-    //-------------------FINAL POST
+    //-------------------FINAL POSTS----------------------------------
     //----------------------------GETS----------------------------------- 
+
     getBase: async (req, res) => {
         try{
-            const id = req.params.id;
-            const data = await exportaBaseDatos.findOne({_id:id});
-            return res.json(data)
+            let id = req.params.id;
+            const data = await exportaBaseDatos.findOne({_id:id });
+            return res.send(data)
         } catch(error) {
             res.status(500).json({message: error.message})   
         }
     },
-    
+    //----------------------------FINAL GETS----------------------------------- 
+    //----------------------------PATCHS----------------------------------- 
     updateBase:  async (req, res) => {
         try {
             const id = req.params.id;
             const updatedData = req.body;
             const data = await exportaBaseDatos.findOneAndUpdate({_id:id},updatedData, { new: true });
-            return res.status(200).json({ success: true, data });
+            return res.status(200).json({ data });
         } catch (error) {
             console.log('ERROR: ', error);
             return res.status(400).json({ success: false });
         }
     },
-}
+};

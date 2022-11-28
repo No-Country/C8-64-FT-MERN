@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// base de datos mongodb
+//TIPO DE PRENDA: CLARA U OSCURA Y VALOR
 const basedatos = new mongoose.Schema({
     shablon_borrado: {
         required: true,
@@ -80,5 +80,8 @@ const basedatos = new mongoose.Schema({
     },
 })
 
-let exportaBaseDatos = mongoose.model('base', basedatos,'base');
+
+var exportaBaseDatos = mongoose.model('base', basedatos,'base');
+
+
 module.exports = { exportaBaseDatos }
