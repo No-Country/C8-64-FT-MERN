@@ -3,10 +3,36 @@ import { BoolHook } from "../hooks/BoolHook.js"
 import "./Colores.css"
 
 
-function Colores({ resultados, setResultados }) {
+function Colores({ resultados, setResultados, setElecciones }) {
 
     const [colores, setColores] = BoolHook(false);
     const [prendas, setPrendas] = BoolHook(false);
+
+
+    function handleChange(event) {
+        const { name, value } = event.target;
+        setElecciones(eleccion =>({
+            ...eleccion,
+            [name]: value
+        }))
+
+        resultados && setResultados()
+    
+        /* setNote(prevNote => {
+          return {
+            ...prevNote,
+            [name]: value
+          };
+        }); */
+      }
+
+    /* const actualizarEleccion = (opcion)=>{
+        setElecciones(eleccion =>({
+            ...eleccion,
+            ...opcion
+        }))
+
+    } */
 
 
     return (
@@ -28,7 +54,8 @@ function Colores({ resultados, setResultados }) {
                         <div className=" mb-3 ml-2"
                             style={{ display: !colores && "none" }}>
                             <input type="number"
-                                onChange={() => resultados && setResultados()}
+                            name="colores"
+                                onChange={handleChange}
                                 className="form-control input-numbers" id="exampleFormControlInput1" placeholder="0" />
                             <label htmlFor="exampleFormControlInput1" className="form-label">Colores</label>
                         </div>
@@ -55,7 +82,8 @@ function Colores({ resultados, setResultados }) {
                         <div className=" mb-3"
                             style={{ display: !prendas && "none" }}>
                             <input type="number"
-                                onChange={() => resultados && setResultados()}
+                            name="prendas"
+                                onChange={handleChange}
                                 className="form-control input-numbers" id="exampleFormControlInput2" placeholder="0" />
                             <label htmlFor="exampleFormControlInput2" className="form-label">Prendas</label>
                         </div>

@@ -1,37 +1,54 @@
 import { useState } from "react";
-import base from "../assets/base.jpg";
-import imagen2 from "../assets/oscuro.jpg"
-import "./FondoPrenda.css"
+import "./FondoPrenda.css";
+import { opcionesApp } from "../utils/opcionesApp";
 
-function FondoPrenda({ resultados, setResultados }) {
+function FondoPrenda({ resultados, setResultados, setElecciones }) {
     const [eleccion, SetEleccion] = useState("null");
 
-    const click = (comp) => {
+    const {logosFondo} = opcionesApp();
+
+    const click = (index) => {
         resultados &&
-            eleccion !== comp && setResultados();
-        SetEleccion(comp)
+            eleccion !== index && setResultados();
+        SetEleccion(index)
+
+        setElecciones(eleccion =>({
+            ...eleccion,
+           fondo: index
+        }))
 
     }
+
+   /*  const actualizarEleccion = (opcion)=>{
+        
+
+    } */
 
     return (
         <>
             <div className="containter fondo-prenda">
                 <h5>Seleccionar el fondo de la prenda</h5>
                 <div className="containter opciones-containter">
-                    <div
+
+
+                    {logosFondo.map((logo, index)=>{
+                        return (
+                            <div
                         className="icon-image"
-                        style={{ border: eleccion === "claro" && ("2px solid #e1a325") }}
-                        onClick={() => click("claro")}
-                    ><img src={base} className="remera" alt="remera base" />
-                    <p className="descripcion">Fondo Claro</p>
+                        key={index}
+                        style={{ border: eleccion === index && ("2px solid #e1a325") }}
+                        onClick={() => click(index)}
+
+                    ><img src={logo.icono} className="remera" alt="remera base" />
+                    <p className="descripcion">{logo.texto}</p>
                     </div>
 
-                    <div className="icon-image"
-                        style={{ border: eleccion === "oscuro" && ("2px solid #e1a325") }}
-                        onClick={() => click("oscuro")}
-                    ><img src={imagen2} className="remera" alt="fondo oscuro" />
-                    <p className="descripcion">Fondo Oscuro</p>
-                    </div>
+                        )
+                    })}
+
+                    
+
+
                 </div>
 
 

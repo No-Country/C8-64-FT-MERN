@@ -1,17 +1,25 @@
 import { useState } from "react";
-import base from "../assets/base.jpg";
+import { opcionesApp } from "../utils/opcionesApp";
+
+
+
 import "./Tipo.css"
 
-function Tipo({ resultados, setResultados }) {
+function Tipo({ resultados, setResultados, setElecciones }) {
     const [eleccion, SetEleccion] = useState("null");
 
-    const tipos = ["Pintura al agua", "Plastisol", "Relieve", "Foil", "Glitter", "Corrosión", "Dorado y Plateado"]
+    const {logosPintura} = opcionesApp();
+
 
     const click = (comp) => {
 
         resultados &&
             eleccion !== comp && setResultados();
         SetEleccion(comp)
+        setElecciones(eleccion =>({
+            ...eleccion,
+            pintura: comp
+        }))
 
     }
 
@@ -23,15 +31,15 @@ function Tipo({ resultados, setResultados }) {
                 <h5>Seleccionar tipo de pintura</h5>
                 <div className="containter opciones-containter">
 
-                    {tipos.map((tipo, index) => {
+                    {logosPintura.map(({logo, texto}, index) => {
                         return (
                             <div
                                 className="icon-image"
-                                style={{ border: eleccion === tipo && ("2px solid #e1a325") }}
-                                onClick={() => click(tipo)}
+                                style={{ border: eleccion === index && ("2px solid #e1a325") }}
+                                onClick={() => click(index)}
                                 key={index}
-                            ><img src={base} className="remera" alt="remera base" />
-                                <p className="descripcion">{tipo}</p></div>
+                            ><img src={logo} className="remera" alt="remera base" />
+                                <p className="descripcion">{texto}</p></div>
                         )
                     })}
 

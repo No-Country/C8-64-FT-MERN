@@ -1,8 +1,37 @@
-.separador{
-    margin: 1rem;
-    width: 90%;
+.logo-eleccion{
+    
+    width: 15%;
+    position: relative;
+  text-align: center;
+}
+
+.eleccion{
+    width: 100%;
+    z-index: 1;
+}
+
+.numero{
+    /* position: absolute;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  -webkit-transform: translate(-50%, -50%); */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  color: #e1a325;
+  font-weight: 600;
 }
 
 .banner-logo{
     width: 250px;
+}
+
+.logos-container{
+    display: flex;
+    justify-content: space-around;
 }
