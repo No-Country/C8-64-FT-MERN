@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const {exportaBaseDatos} = require('../models/model');
 
 
@@ -5,6 +6,9 @@ module.exports = {
     //-------------------POSTS----------------------------------
     postBase: async (req, res) => {
         let data = new exportaBaseDatos({
+            user:req.body.user,
+            password:bcrypt.hashSync(req.body.password, 10),
+            email:req.body.email,
             shablon_borrado: req.body.shablon_borrado,
             shablon_nuevo: req.body.shablon_nuevo,
             shablon_usado: req.body.shablon_usado,
@@ -58,4 +62,27 @@ module.exports = {
             return res.status(400).json({ success: false });
         }
     },
+    showLogin: (req, res) => {
+		res.render('login');
+	},
+    
+    authenticate: async (req,res) => {
+        try {
+            const user = req.body.user;
+            let usuarioEncontrado = await exportaBaseDatos.findOne({user:user});
+            if (!usuarioEncontrado) {
+                return res.send('EL USUARIO NO EXISTE')
+            }
+
+            let validacionPw = bcrypt.compareSync(req.body.password, usuarioEncontrado.password);
+            if (validacionPw) {
+                return res.redirect(`/api/get/${usuarioEncontrado._id}`)
+            }else{
+                return res.send('CONTRASEÑA INCORRECTA')
+            }
+            
+        } catch (error) {
+            res.status(500).json({message: error.message})   
+        }
+    }
 };

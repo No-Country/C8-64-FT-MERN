@@ -1,35 +1,25 @@
-const bodyParser = require('body-parser');
 const { count } = require('console');
 const cors = require('cors');
-const express = require('express');
+var path = require('path');
+var express = require('express')
 const mongoose = require('mongoose');
-const routes = require('./routes/routes');
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false}))
-app.use(bodyParser.json())
 
-app.set('view engine', 'ejs');
 require('dotenv').config();
+app.set('views', path.join(__dirname, '/views'));
+app.set('view engine', 'ejs');
 
+const routes = require('./routes/routes');
 //mongodb  
 mongoose.connect(process.env.MONGO_URL,
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-    .then(() => console.log('MongoDB Conectada'))
-    .catch(err => console.log(err)
+{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB Conectada'))
+.catch(err => console.log(err)
 );
 
-const database = mongoose.connection
-
-database.on('error', (error) => {
-    console.log(error)
-})
-
-database.once('connected', () => {
-    console.log('Database Connected');
-})
 
 app.use(cors())
 app.use(express.json());
