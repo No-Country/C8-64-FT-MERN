@@ -11,7 +11,9 @@ module.exports = router;
 //POST BASE
 router.post('/post/base', controllers.postBase);
 //UPDATE BASE
-router.patch('/updateBase/:id', controllers.updateBase)
+router.patch('/updateBase/:id', controllers.updateBase);
+//get
+router.get('/get/:id', controllers.getBase);
 
 
 //LOGIN

@@ -38,7 +38,16 @@ module.exports = {
         }
     },
     //-------------------FINAL POSTS----------------------------------
-    
+    //get base
+    getBase: async (req,res) => {
+        try{
+            let id = req.params.id;
+            const data = await exportaBaseDatos.findOne({_id:id});
+            res.json(data)
+        } catch(error) {
+            res.status(500).json({message: error.message})   
+        }
+    },
     
     //----------------------------PATCHS----------------------------------- 
     updateBase:  async (req, res) => {
