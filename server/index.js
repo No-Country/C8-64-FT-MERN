@@ -5,13 +5,20 @@ var express = require('express')
 const mongoose = require('mongoose');
 const app = express();
 
+const session = require('express-session');
+
+app.use(session({
+    secret: 'cotizador',
+    resave: true,
+    saveUninitialized: true
+}));
+
 require('dotenv').config();
-app.set('views', path.join(__dirname, '/views'));
-app.set('view engine', 'ejs');
 
 const routes = require('./routes/routes');
+
 //mongodb  
-mongoose.connect(process.env.MONGO_URL,
+mongoose.connect(process.env.DATABASE_URL,
 {
     useNewUrlParser: true,
     useUnifiedTopology: true

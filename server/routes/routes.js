@@ -2,19 +2,25 @@ const express = require('express');
 const controllers = require('../controllers/controllers');
 const router = express.Router()
 var bodyParser = require('body-parser')
-
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
+const auth = require('../middleware/auth')
 
 module.exports = router;
 
-//----------------router post 
+//POST BASE
 router.post('/post/base', controllers.postBase);
-//----------------router get
-router.get('/get/:id', controllers.getBase);
 //UPDATE BASE
-router.patch('/updateBase/:id', controllers.updateBase);
+router.patch('/updateBase/:id', controllers.updateBase)
+
 
 //LOGIN
-router.get('/login', controllers.showLogin);
-router.post('/login',urlencodedParser, controllers.authenticate)
+router.get('/login', controllers.login);
+// Get content endpoint
+router.get('/content/:id', auth, controllers.getContent);
+//logout
+router.get('/logout', function (req, res) {
+    req.session.destroy();
+    res.send("logout success!");
+});
+

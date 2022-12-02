@@ -38,18 +38,8 @@ module.exports = {
         }
     },
     //-------------------FINAL POSTS----------------------------------
-    //----------------------------GETS----------------------------------- 
-
-    getBase: async (req, res) => {
-        try{
-            let id = req.params.id;
-            const data = await exportaBaseDatos.findOne({_id:id });
-            return res.send(data)
-        } catch(error) {
-            res.status(500).json({message: error.message})   
-        }
-    },
-    //----------------------------FINAL GETS----------------------------------- 
+    
+    
     //----------------------------PATCHS----------------------------------- 
     updateBase:  async (req, res) => {
         try {
@@ -62,27 +52,40 @@ module.exports = {
             return res.status(400).json({ success: false });
         }
     },
-    showLogin: (req, res) => {
-		res.render('login');
-	},
     
-    authenticate: async (req,res) => {
+    //------------------LOGGIN---------------------------------
+    login: async (req, res) => {
         try {
-            const user = req.body.user;
-            let usuarioEncontrado = await exportaBaseDatos.findOne({user:user});
-            if (!usuarioEncontrado) {
-                return res.send('EL USUARIO NO EXISTE')
-            }
+            let usuarioEncontrado = await exportaBaseDatos.findOne({user:req.query.user});
+            if (usuarioEncontrado){
+                let validacionPw = bcrypt.compareSync(req.query.password, usuarioEncontrado.password);
 
-            let validacionPw = bcrypt.compareSync(req.body.password, usuarioEncontrado.password);
-            if (validacionPw) {
-                return res.redirect(`/api/get/${usuarioEncontrado._id}`)
+                if (validacionPw == false){
+                    res.send("Credenciales invalidas"); 
+                }
+                
+                req.session.user = JSON.stringify(usuarioEncontrado.user);
+                req.session.admin = true;
+                    
+                res.redirect(`/api/content/${usuarioEncontrado.id}`);
             }else{
-                return res.send('CONTRASEÑA INCORRECTA')
+                res.send("Credenciales invalidas");
             }
             
         } catch (error) {
             res.status(500).json({message: error.message})   
+            
+        }      
+    },
+
+    getContent: async (req,res) => {
+        try{
+            let id = req.params.id;
+            const data = await exportaBaseDatos.findOne({_id:id});
+            res.json(data)
+        } catch(error) {
+            res.status(500).json({message: error.message})   
         }
-    }
+    },  
+    
 };
