@@ -9,7 +9,6 @@ export function useApi(initialValue = "638407eb2aac88001c4e0ceb") {
 
     axios.get(url).then((resp) => {
       // Se obtiene la data y se carga al estado al key correspondiente
-      console.log(resp.data);
       setValores({
             shablon: [(resp.data.shablon_nuevo + resp.data.shablon_bajada + resp.data.shablon_grabado), (resp.data.shablon_usado + resp.data.shablon_borrado + resp.data.shablon_bajada + resp.data.shablon_grabado)],
             rendimiento: [[resp.data.logo_claro, resp.data.central_claro, resp.data.full_claro], [resp.data.logo_oscuro, resp.data.central_oscuro, resp.data.full_oscuro]],

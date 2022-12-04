@@ -1,0 +1,145 @@
+.colores-prenda {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.logos-container {
+  position: relative;
+}
+
+.input-numbers {
+  text-align: center;
+  font-size: 1.7rem;
+  border: none;
+  margin-top: 18px;
+  background: none;
+  appearance: none;
+  padding: 0;
+}
+
+.input-numbers:focus {
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  background: none;
+}
+
+.form-label {
+  position: absolute;
+  top: 57px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.6rem;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.lapiz {
+  width: 71px;
+  margin-top: 4px;
+}
+
+@media only screen and (min-width: 600px) {
+  .colores-prenda {
+    width: 50%;
+  }
+
+  .opciones-containter {
+    margin-top: auto;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .colores-prenda {
+    width: 50%;
+  }
+
+  .opciones-containter {
+    margin-top: auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .lapiz {
+    width: 32px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .descripcion-colores {
+    margin-top: 2px;
+    position: absolute;
+    top: 32px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .input-numbers {
+    font-size: 1rem;
+    margin-top: 5px;
+    padding: 0;
+  }
+
+  .form-label {
+    position: absolute;
+    top: 35px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .lapiz {
+    width: 38px;
+    height: 38px;
+    top: 2px;
+  }
+
+  .descripcion-colores {
+    top: 40px;
+  }
+
+  .input-numbers {
+    font-size: 1.2rem;
+  }
+
+  .form-label {
+    position: absolute;
+    top: 38px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  
+  .lapiz {
+    width: 64px;
+    height: 64px;
+    top: 3px;
+  }
+
+  .input-numbers {
+    font-size: 1.7rem;
+   margin-top: 20px;
+  }
+
+  .form-label {
+    position: absolute;
+    top: 73px;
+    font-size: .65rem ;
+  }
+}

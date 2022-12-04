@@ -1,0 +1,18 @@
+.tamano-prenda{
+    margin-top: 5px;
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+
+    .opciones-containter{
+        margin-top: auto;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .titulo-100{
+        height: 18px;
+    }
+}

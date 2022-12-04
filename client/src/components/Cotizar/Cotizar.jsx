@@ -1,28 +1,32 @@
 import "./Cotizar.css"
-import { BoolHook } from "../hooks/BoolHook.js"
-import Modal from "./Modal";
+import { BoolHook } from "../../hooks/BoolHook.js"
+import Modal from "../Modal/Modal";
 import { useState } from "react";
-import { opcionesApp } from "../utils/opcionesApp";
+import { opcionesApp } from "../../utils/opcionesApp";
 
 
 
 function Cotizar({ resultados, setResultados, elecciones, setElecciones, valores, setValores }) {
 
+    const valorDolar = document.querySelector(".valor-dolar");
+
 
     const [isOpenError, openModalError] = BoolHook(false); //inicializacion de la variable que maneja que se muestre o se oculte el Modal que muestra los mensajes de error
     const [mensaje, setMensaje] = useState(""); //Hook que controla los mensajes de error
-    const {opcionesCotizar} = opcionesApp(); //trae las opciones de checkbox del archivo de configuracion
+    const { opcionesCotizar } = opcionesApp(); //trae las opciones de checkbox del archivo de configuracion
 
 
-    const handleOptions = (event)=>{   //Funcion que maneja las opciones de las checkbox shablones y cotizacion
+    const handleOptions = (event) => {   //Funcion que maneja las opciones de las checkbox shablones y cotizacion
 
         resultados && setResultados();
 
 
         const opcion = event.target.name;
 
-        if(opcion === "cotizacion" && elecciones.opciones[1]){
-            setElecciones(eleccion =>({
+        if (opcion === "cotizacion" && elecciones.opciones[1]) {
+            valorDolar.value = ""
+
+            setElecciones(eleccion => ({
                 ...eleccion,
                 cotizacion: 1
             }))
@@ -31,28 +35,28 @@ function Cotizar({ resultados, setResultados, elecciones, setElecciones, valores
 
 
 
-        if(opcion === "shablones"){
-            setElecciones(eleccion =>({
+        if (opcion === "shablones") {
+            setElecciones(eleccion => ({
                 ...eleccion,
                 opciones: [!(eleccion.opciones[0]), (eleccion.opciones[1])]
             }))
-        }else{
-            setElecciones(eleccion =>({
+        } else {
+            setElecciones(eleccion => ({
                 ...eleccion,
                 opciones: [(eleccion.opciones[0]), !(eleccion.opciones[1])]
             }))
         }
-        
-        
+
+
 
     }
 
-    const handleInput = (event)=>{  //funcion que modifica el valor de la cotización cuando se ingresa el monto en el input
+    const handleInput = (event) => {  //funcion que modifica el valor de la cotización cuando se ingresa el monto en el input
 
         resultados && setResultados();
         const valor = Number(event.target.value)
 
-        setElecciones(eleccion =>({
+        setElecciones(eleccion => ({
             ...eleccion,
             cotizacion: valor
         }))
@@ -78,18 +82,18 @@ function Cotizar({ resultados, setResultados, elecciones, setElecciones, valores
             }
         }
 
-        if(elecciones.fondo === 0 && elecciones.pintura === 5){
-            openModalError();
-                return (
-                        setMensaje(`No se puede utilizar corrosión en un fondo claro`)                         
-                )
-        }
-
-        if(elecciones.opciones[1] && elecciones.cotizacion < 1){
+        if (elecciones.fondo === 0 && elecciones.pintura === 5) {
             openModalError();
             return (
-                setMensaje(`El valor de la cotización debe de ser no puede ser inferior a 1`)                         
-        )
+                setMensaje(`No se puede utilizar corrosión en un fondo claro`)
+            )
+        }
+
+        if (elecciones.opciones[1] && elecciones.cotizacion < 1) {
+            openModalError();
+            return (
+                setMensaje(`El valor de la cotización debe de ser no puede ser inferior a 1`)
+            )
         }
 
 
@@ -105,28 +109,28 @@ function Cotizar({ resultados, setResultados, elecciones, setElecciones, valores
         <>
             <div className="container container-cotizar">
 
-                {opcionesCotizar.map(({name, texto}, index)=>{
-                    return(
-                        <div className="input-group mb-3" key={index}>
-                    <div className="input-group-text">
-                        <input className="form-check-input mt-0" 
-                        type="checkbox" 
-                        value="" 
-                        aria-label="Checkbox for following text input"
-                        checked={elecciones.opciones[index]} 
-                        onChange={handleOptions}
-                        name={name} />
-                    </div>
-                    <input type="text" className="form-control non-clickable" aria-label="Text input with checkbox" value={texto} readOnly />
-                </div>)
+                {opcionesCotizar.map(({ name, texto }, index) => {
+                    return (
+                        <div className="input-group mb-3 checkbox-container" key={index}>
+                            <div className="input-group-text">
+                                <input className="form-check-input mt-0"
+                                    type="checkbox"
+                                    value=""
+                                    aria-label="Checkbox for following text input"
+                                    checked={elecciones.opciones[index]}
+                                    onChange={handleOptions}
+                                    name={name} />
+                            </div>
+                            <input type="text" className="form-control non-clickable" aria-label="Text input with checkbox" value={texto} readOnly />
+                        </div>)
                 })}
 
 
 
 
                 <div className="form-floating mb-3" style={{ display: !elecciones.opciones[1] && "none" }}>
-                    <input type="number" className="form-control valor-dolar" value={elecciones.cotizacion} id="floatingInput" placeholder="name@example.com" onChange={handleInput} />
-                    <label htmlFor="floatingInput">Ingresar la cotización del día</label>
+                    <input type="number" className="form-control valor-dolar" /* value={elecciones.cotizacion} */ id="floatingInput" placeholder="0" onChange={handleInput} />
+                    <label className="cotizacion-label" htmlFor="floatingInput">Ingresar la cotización del día</label>
                 </div>
 
                 <a className="boton-prueba d-grid gap-2" href="#cotizacion">

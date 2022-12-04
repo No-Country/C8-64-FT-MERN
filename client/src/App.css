@@ -11,5 +11,155 @@
 .app-container{
   display: flex;
   flex-direction: column;
+  min-width: 321px;
 }
 
+.options-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.fondo-logo{
+  display: none;
+}
+
+.rotacion-logo{
+  display: none;
+}
+
+
+
+
+
+@media only screen and (min-width: 992px) {
+  h5{
+    font-size: 1rem;
+  }
+
+  p{
+    line-height: 10px;
+ 
+  }
+
+  .app-container{
+    flex-direction: row;
+  }
+
+  .options-container{
+    min-height: 480px;
+    
+    height: calc(100vh - 130px);
+  }
+
+  .cotizacion-container{
+    min-height: 390px;
+    height: calc(100vh - 130px);
+    position: relative;
+    /* width: 70%; */
+  }
+
+  .fondo-logo{
+    display:flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    /* filter: grayscale(100%);
+   -webkit-filter: grayscale(100%);  */
+    opacity: 20%;
+  
+  }
+
+  .rotacion-logo{
+    display:flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  
+
+  @media (prefers-reduced-motion: no-preference) {
+    .rotacion-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+
+
+  
+
+}
+
+@media only screen and (min-width: 1400px) {
+  
+  .options-container{
+    min-height: 730px;
+    height: calc(100vh - 130px);
+  }
+
+  .cotizacion-container{
+    min-height: 730px;
+  }
+
+  .fondo-logo{
+    display:flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    /* filter: grayscale(100%);
+   -webkit-filter: grayscale(100%);  */
+    opacity: 20%;
+  
+  }
+
+  .rotacion-logo{
+    display:flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  
+
+  @media (prefers-reduced-motion: no-preference) {
+    .rotacion-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+
+
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

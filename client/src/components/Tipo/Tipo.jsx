@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { opcionesApp } from "../utils/opcionesApp";
-
-
-
 import "./Tipo.css"
+import { useState } from "react";
+import { opcionesApp } from "../../utils/opcionesApp";
+
+
 
 function Tipo({ resultados, setResultados, setElecciones }) {
     const [eleccion, SetEleccion] = useState("null");
@@ -27,19 +26,29 @@ function Tipo({ resultados, setResultados, setElecciones }) {
 
     return (
         <>
-            <div className="containter fondo-prenda">
+            <div className="containter pintura-prenda">
                 <h5>Seleccionar tipo de pintura</h5>
                 <div className="containter opciones-containter">
 
                     {logosPintura.map(({logo, texto}, index) => {
                         return (
+
+                            
+
+
+
                             <div
-                                className="icon-image"
-                                style={{ border: eleccion === index && ("2px solid #e1a325") }}
+                            className={`icon-image ${eleccion === index && "rotacion"}`}
+                                style={{ border: eleccion === index && ("2px solid #e1a325"), transform: eleccion === index && "rotateY(360deg)" }}
                                 onClick={() => click(index)}
                                 key={index}
-                            ><img src={logo} className="remera" alt="remera base" />
+                            >
+                                <div className="logos-container">
+                                <img src={logo} className="remera" alt="remera base" />
                                 <p className="descripcion">{texto}</p></div>
+
+                                </div>
+                                
                         )
                     })}
 
