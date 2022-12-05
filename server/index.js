@@ -8,9 +8,13 @@ const app = express();
 const session = require('cookie-session');
 
 app.use(session({
-    secret: 'cotizador',
-    resave: true,
-    saveUninitialized: true
+    secret: 'secret',
+    saveUninitialized: true,
+    resave: false,
+    maxAge: 1000 * 60 * 15,
+    cookie:{
+    secure: true
+    }
 }));
 
 require('dotenv').config();
@@ -27,11 +31,8 @@ mongoose.connect(process.env.MONGO_URL,
 .catch(err => console.log(err)
 );
 
-const corsOptions = {
-    optionsSuccessStatus: 200,
-    credentials: true,
-  }
-app.use(cors(corsOptions))
+
+app.use(cors())
 app.use(express.json());
 app.use('/api', routes)
 
