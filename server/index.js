@@ -5,7 +5,7 @@ var express = require('express')
 const mongoose = require('mongoose');
 const app = express();
 
-const session = require('express-session');
+const session = require('cookie-session');
 
 app.use(session({
     secret: 'cotizador',
