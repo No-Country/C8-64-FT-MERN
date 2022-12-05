@@ -14,8 +14,7 @@ router.post('/post/base', controllers.postBase);
 router.post('/post/user', controllers.postcreateUser)
 //UPDATE BASE
 router.patch('/updateBase/:id', controllers.updateBase)
-//get
-router.get('/get/:id', controllers.getContent);
+
 
 //LOGIN
 router.get('/login', controllers.login);

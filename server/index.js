@@ -5,13 +5,6 @@ var express = require('express')
 const mongoose = require('mongoose');
 const app = express();
 
-const session = require('express-session');
-
-app.use(session({
-    secret: 'cotizador',
-    resave: true,
-    saveUninitialized: true
-}));
 
 require('dotenv').config();
 
