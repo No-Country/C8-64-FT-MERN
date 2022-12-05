@@ -80,7 +80,6 @@ module.exports = {
             }else{
                 res.send("Credenciales invalidas");
             }
-            
         } catch (error) {
             res.status(500);
         }      

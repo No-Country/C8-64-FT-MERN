@@ -18,7 +18,7 @@ require('dotenv').config();
 const routes = require('./routes/routes');
 
 //mongodb  
-mongoose.connect(process.env.MONGO_URL,
+mongoose.connect(process.env.DATABASE_URL,
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -27,8 +27,11 @@ mongoose.connect(process.env.MONGO_URL,
 .catch(err => console.log(err)
 );
 
-
-app.use(cors())
+const corsOptions = {
+    optionsSuccessStatus: 200,
+    credentials: true,
+  }
+app.use(cors(corsOptions))
 app.use(express.json());
 app.use('/api', routes)
 
