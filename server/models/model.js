@@ -2,18 +2,6 @@ const mongoose = require('mongoose');
 
 //TIPO DE PRENDA: CLARA U OSCURA Y VALOR
 const basedatos = new mongoose.Schema({
-    user:{
-        required: true,
-        type: String
-    },
-    password:{
-        required: true,
-        type: String
-    },
-    email:{
-        required: true,
-        type: String
-    },
     shablon_borrado: {
         required: true,
         type: Number

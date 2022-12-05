@@ -1,14 +1,13 @@
-const bcrypt = require('bcrypt');
+
 const {exportaBaseDatos} = require('../models/model');
+const {modelUser} = require('../models/user')
+
 
 
 module.exports = {
     //-------------------POSTS----------------------------------
     postBase: async (req, res) => {
         let data = new exportaBaseDatos({
-            user:req.body.user,
-            password:bcrypt.hashSync(req.body.password, 10),
-            email:req.body.email,
             shablon_borrado: req.body.shablon_borrado,
             shablon_nuevo: req.body.shablon_nuevo,
             shablon_usado: req.body.shablon_usado,
@@ -37,18 +36,22 @@ module.exports = {
             res.status(400).json({message: error.message})
         }
     },
-    //-------------------FINAL POSTS----------------------------------
-    //get base
-    getBase: async (req,res) => {
-        try{
-            let id = req.params.id;
-            const data = await exportaBaseDatos.findOne({_id:id});
-            res.json(data)
-        } catch(error) {
-            res.status(500).json({message: error.message})   
+    postcreateUser: async (req, res) => {
+        let user = new modelUser ({
+            idbase: req.body.idbase,
+            user:req.body.user,
+            password: req.body.password,
+        })
+        try {
+            const userToSave = await user.save();
+            res.status(200).json(userToSave)
+        }
+        catch (error) {
+            res.status(400).json({message: error.message})
         }
     },
-    
+    //-------------------FINAL POSTS----------------------------------
+
     //----------------------------PATCHS----------------------------------- 
     updateBase:  async (req, res) => {
         try {
@@ -61,30 +64,28 @@ module.exports = {
             return res.status(400).json({ success: false });
         }
     },
-    
+
     //------------------LOGGIN---------------------------------
     login: async (req, res) => {
         try {
-            let usuarioEncontrado = await exportaBaseDatos.findOne({user:req.query.user});
+            let usuarioEncontrado = await modelUser.findOne({user:req.query.user});
             if (usuarioEncontrado){
-                let validacionPw = bcrypt.compareSync(req.query.password, usuarioEncontrado.password);
-
-                if (validacionPw == false){
-                    res.send("Credenciales invalidas"); 
-                }
+                let pwQuery = req.query.password;
+                let pwUser = usuarioEncontrado.password;
                 
-                req.session.user = JSON.stringify(usuarioEncontrado.user);
-                req.session.admin = true;
-                    
-                res.redirect(`/api/content/${usuarioEncontrado.id}`);
+                if (pwQuery == pwUser){
+                    res.redirect(`/api/content/${usuarioEncontrado.idbase}`);
+                }else{
+                    res.send('error de contraseña')
+                }
             }else{
-                res.send("Credenciales invalidas");
+                res.send('Usuario no encontrado');
             }
+            
         } catch (error) {
             res.status(500);
         }      
     },
-
     getContent: async (req,res) => {
         try{
             let id = req.params.id;
@@ -94,5 +95,4 @@ module.exports = {
             res.status(500); 
         }
     },  
-    
 };
