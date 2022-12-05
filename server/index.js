@@ -5,16 +5,12 @@ var express = require('express')
 const mongoose = require('mongoose');
 const app = express();
 
-const session = require('cookie-session');
+const session = require('express-session');
 
 app.use(session({
-    secret: 'secret',
-    saveUninitialized: true,
-    resave: false,
-    maxAge: 1000 * 60 * 15,
-    cookie:{
-    secure: true
-    }
+    secret: 'cotizador',
+    resave: true,
+    saveUninitialized: true
 }));
 
 require('dotenv').config();
