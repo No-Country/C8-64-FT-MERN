@@ -1,0 +1,173 @@
+.fondo-prenda {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  width: 100%;
+  height: 176px;
+}
+
+.opciones-containter {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 10px;
+
+  
+
+}
+
+.logos-container{
+  position: relative;
+}
+
+.rotacion{
+  transition: transform 1s;
+}
+
+.icon-image {
+  padding: 4px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  margin: 5px;
+  position: relative;
+}
+
+.remera {
+  width: 75px;
+}
+
+@media only screen and (min-width: 600px) {
+ /*  .titulo-50 {
+    height: 40px;
+  } */
+
+  .fondo-prenda {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+    
+  
+    .icon-image {
+      margin: 5px 15px;
+    }
+  
+    /* .opciones-containter {
+      justify-content:flex-start ;
+    } */
+  }
+
+@media only screen and (min-width: 992px) {
+  .fondo-prenda{
+    height: 113px;
+  }
+
+
+    .titulo-50{
+        font-size: 1rem;
+        height: 35px;
+    }
+  
+  .icon-image {
+    padding: 4px 1px;
+    width: 58px;
+    height: 58px;
+    margin: 1px;
+    position: relative;
+    
+
+  }
+
+  
+
+  .logos-container{
+    height: 58px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: pink; */
+    position: relative;
+  }
+
+ 
+
+  .remera {
+    width: 30px;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+  .fondo-prenda{
+    height: 125px;
+  }
+
+
+  .icon-image {
+    padding: 4px 1px;
+    width: 66px;
+    height: 66px;
+    margin: 3px;
+    position: relative;
+
+  }
+
+  .logos-container{
+    height: 66px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+ 
+
+  .remera {
+    width: 40px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  /* .titulo-50{
+    font-size: 1.03rem;
+  } */
+
+  .fondo-prenda{
+    height: 171px;
+    /* justify-content: flex-start; */
+  }
+
+  .opciones-containter{
+    margin-top: 0;
+  }
+
+  
+
+  .icon-image {
+    padding: 4px;
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+  }
+
+  .logos-container{
+    height: auto;
+  }
+
+ 
+
+  .remera {
+    width: 70px;
+  }
+
+  .descripcion{
+    position: absolute;
+    top: 75px;
+    font-size: .65rem !important;
+  }
+}

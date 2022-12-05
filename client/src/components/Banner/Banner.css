@@ -1,0 +1,58 @@
+.banner-container{
+  transition: 10s;
+}
+.elecciones-container{
+  display: flex;
+  justify-content: space-around;
+  min-width: 290px;
+}
+
+.logo-eleccion{
+    
+    width: 15%;
+    position: relative;
+  text-align: center;
+
+}
+
+.eleccion{
+    width: 100%;
+    z-index: 1;
+}
+
+.numero{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  color: #e1a325;
+  font-weight: 600;
+}
+
+.banner-logo{
+    width: 250px;
+}
+
+@media only screen and (min-width: 992px) {
+  .banner-logo{
+    /* width: 150px;
+    margin-top: 20px; */
+    display: none
+}
+
+  .elecciones-container{
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .logo-eleccion{
+    
+    width: 15%;
+  }
+    
+
+
+}
+
