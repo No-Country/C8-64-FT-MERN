@@ -74,7 +74,7 @@ module.exports = {
                 let pwUser = usuarioEncontrado.password;
                 
                 if (pwQuery == pwUser){
-                    res.redirect(`/api/content/${usuarioEncontrado.idbase}`);
+                    res.redirect(`/api/get/${usuarioEncontrado.idbase}`);
                 }else{
                     res.send('error de contraseña')
                 }
