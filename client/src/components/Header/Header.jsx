@@ -3,6 +3,7 @@ import logo from "../../assets/Logo Fondo Oscuro.png"
 import { BoolHook } from "../../hooks/BoolHook.js"
 import { useState } from "react"
 import { opcionesApp } from "../../utils/opcionesApp"
+import { Link } from "react-router-dom"
 
 function Header() {
 
@@ -14,7 +15,9 @@ function Header() {
         <>
             <header>
                 <div className="header-container container">
-                    <img className="header-logo" src={logo} alt="" />
+                    <Link to="/"><img className="header-logo" src={logo} alt="app logo" /></Link>
+
+                    
                     <img className="flag" src={paises[activa].bandera} alt={paises[activa].texto}
                         onClick={() => setPais()} />
 

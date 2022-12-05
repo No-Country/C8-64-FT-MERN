@@ -4,10 +4,14 @@ import axios from "axios";
 export function useApi(initialValue = "638407eb2aac88001c4e0ceb") {
   const [valores, setValores] = useState(null);
 
-  const fetchValores = () => {
-    const url = `https://c8-64-ft-mern-production.up.railway.app/api/get/${initialValue}`;
 
-    axios.get(url).then((resp) => {
+  /* https://c8-64-ft-mern-production.up.railway.app/api/login?user=admin&password=admin */
+  const url = `https://c8-64-ft-mern-production.up.railway.app/api/`;
+
+  const fetchValores = () => {
+    
+
+    axios.get(`${url}get/${initialValue}`).then((resp) => {
       // Se obtiene la data y se carga al estado al key correspondiente
       setValores({
             shablon: [(resp.data.shablon_nuevo + resp.data.shablon_bajada + resp.data.shablon_grabado), (resp.data.shablon_usado + resp.data.shablon_borrado + resp.data.shablon_bajada + resp.data.shablon_grabado)],
@@ -17,28 +21,19 @@ export function useApi(initialValue = "638407eb2aac88001c4e0ceb") {
     }).catch(err => console.log(err));
   };
 
-  return [valores, fetchValores];
+  const login = (user, pass)=>{
+    console.log(`username: ${user} password: ${pass}`);
+
+    axios.get(`${url}login?user=${user}&password=${pass}`).then((resp) => {
+     
+      console.log(resp)
+     
+      
+    })
+
+
+  }
+
+  return [valores, fetchValores, login];
 }
 
-/* agua plastisol */ /*  */
-/*  */
-
-/* {: 2.85,
-: 8.25,
-: 250,
-: 190,
-: 12,
-: 25,
-: 11,
-: 40,
-: 33,
-: 14,
-: 900,
-: 700,
-: 8.15,
-: 13.35,
-shablon_bajada: 7,
-shablon_borrado: 5,
-shablon_grabado: 5,
-shablon_nuevo: 11,
-shablon_usado: 5} */
