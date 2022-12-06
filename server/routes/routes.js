@@ -20,4 +20,6 @@ router.patch('/updateBase/:id', controllers.updateBase)
 router.get('/login', controllers.login);
 // Get content endpoint
 router.get('/content/:id', controllers.getContent);
+router.get('/users', controllers.getUsers);
+
 

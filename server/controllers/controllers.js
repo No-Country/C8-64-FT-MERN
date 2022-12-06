@@ -95,4 +95,12 @@ module.exports = {
             res.status(500); 
         }
     },  
+    getUsers: async (req,res) => {
+        try{
+            const data = await exportaBaseDatos.find();
+            res.json(data)
+        } catch(error) {
+            res.status(500); 
+        }
+    },  
 };
