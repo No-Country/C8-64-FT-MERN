@@ -97,7 +97,7 @@ module.exports = {
     },  
     getUsers: async (req,res) => {
         try{
-            const data = await exportaBaseDatos.find();
+            const data = await modelUser.find();
             res.json(data)
         } catch(error) {
             res.status(500); 
