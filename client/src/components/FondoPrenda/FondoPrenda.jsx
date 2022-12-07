@@ -27,7 +27,7 @@ function FondoPrenda({ resultados, setResultados, setElecciones }) {
     return (
         <>
             <div className="containter fondo-prenda">
-                <h5 className="titulo-50">Seleccionar el fondo de la prenda</h5>
+                <h5 className="titulo-50 inter">Seleccionar el fondo de la prenda</h5>
                 <div className="containter opciones-containter">
 
 
@@ -42,7 +42,7 @@ function FondoPrenda({ resultados, setResultados, setElecciones }) {
                     >
                         <div className="logos-container">
                         <img src={logo.icono} className="remera" alt="remera base" />
-                    <p className="descripcion">{logo.texto}</p>
+                    <p className="descripcion inter">{logo.texto}</p>
 
                         </div>
                         

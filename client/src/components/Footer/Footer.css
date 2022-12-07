@@ -14,5 +14,14 @@ footer {
   .team{
     color: white;
     text-decoration: none;
+    font-size: 1.1rem;
 
+  }
+
+  @media only screen and (min-width: 992px) {
+    .team:hover{
+      color: rgb(90, 86, 86);
+      
+  
+    }
   }
