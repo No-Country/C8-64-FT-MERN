@@ -27,7 +27,7 @@ function Tipo({ resultados, setResultados, setElecciones }) {
     return (
         <>
             <div className="containter pintura-prenda">
-                <h5>Seleccionar tipo de pintura</h5>
+                <h5 className="inter">Seleccionar tipo de pintura</h5>
                 <div className="containter opciones-containter">
 
                     {logosPintura.map(({logo, texto}, index) => {
@@ -45,7 +45,7 @@ function Tipo({ resultados, setResultados, setElecciones }) {
                             >
                                 <div className="logos-container">
                                 <img src={logo} className="remera" alt="remera base" />
-                                <p className="descripcion">{texto}</p></div>
+                                <p className="descripcion inter">{texto}</p></div>
 
                                 </div>
                                 

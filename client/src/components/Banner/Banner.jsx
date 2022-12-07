@@ -39,12 +39,12 @@ function Banner({ elecciones }) {
                     <div className="logo-eleccion mt-4 mb-4">
 
                         <img className="eleccion" src={vacio} alt="" />
-                        <p className="numero">{elecciones.colores}</p>
+                        <p className="numero inter">{elecciones.colores}</p>
 
                     </div>
                     <div className="logo-eleccion mt-4 mb-4">
                         <img className="eleccion" src={vacio} alt="" />
-                        <p className="numero">{elecciones.prendas}</p>
+                        <p className="numero inter">{elecciones.prendas}</p>
 
                     </div>
                     <div className="logo-eleccion mt-4 mb-4">

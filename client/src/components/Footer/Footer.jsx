@@ -7,7 +7,7 @@ function Footer() {
         <>
             <footer>
 
-                <a className="team" href="./e">Meet the team</a>
+                <a className="team inter" href="./e">Meet Team C8-64-FT-MERN</a>
 
             </footer>
         </>

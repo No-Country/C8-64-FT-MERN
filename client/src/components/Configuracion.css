@@ -1,0 +1,17 @@
+
+.actualizar{
+    background-color: #e1a325;
+    border: #e1a325;
+}
+
+.actualizar:hover{
+    background-color: #be891f!important;
+    border: #e1a325;
+}
+
+.col-form-label{
+    text-align: left;
+}
+
+
+
