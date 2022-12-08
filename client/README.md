@@ -38,8 +38,8 @@ Para el **cliente** de la aplicacion se utilizo React, ademas de ReactRouter par
 
 El servidor esta deployado en railway 
 
-		`https://c8-64-ft-mern-production.up.railway.app/api/638407eb2aac88001c4e0ceb`
-    `https://c8-64-ft-mern-production.up.railway.app/api/updateBase/638407eb2aac88001c4e0ceb`
+`https://c8-64-ft-mern-production.up.railway.app/api/638407eb2aac88001c4e0ceb`
+`https://c8-64-ft-mern-production.up.railway.app/api/updateBase/638407eb2aac88001c4e0ceb`
 
 
 
