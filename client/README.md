@@ -45,7 +45,7 @@ El servidor esta deployado en railway
 
 ## Deploy 🚀
 
-Puedes ver la aplicacion funcionando en produccion mediante este link: [DispersionApp](https://github.com/No-Country/C8-64-FT-MERN/tree/main/client) .
+Puedes ver la aplicacion funcionando en produccion mediante este link: [DispersionApp](https://dispersion.vercel.app/) .
 
  
 Si llegaste aqui gracias 🙏🏼 me gusta ser leido, Buen Dia!
