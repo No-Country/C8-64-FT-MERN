@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css"
 
 function Footer() {
@@ -6,8 +7,7 @@ function Footer() {
     return (
         <>
             <footer>
-
-                <a className="team inter" href="./e">Meet Team C8-64-FT-MERN</a>
+                <Link to={"/team"} className="team inter">Meet Team C8-64-FT-MERN</Link>
 
             </footer>
         </>

@@ -36,7 +36,8 @@ function FondoPrenda({ resultados, setResultados, setElecciones }) {
                             <div
                         className={`icon-image ${eleccion === index && "rotacion"}`}
                         key={index}
-                        style={{ border: eleccion === index && ("2px solid #e1a325"), transform: eleccion === index && "rotateY(360deg)" }}
+                        
+                        style={{ backgroundColor: eleccion === index && ("#b6b1b2") , border: eleccion === index && "2px solid black", transform: eleccion === index && "rotateY(360deg)" }}
                         onClick={() => click(index)}
 
                     >

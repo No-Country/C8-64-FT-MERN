@@ -3,6 +3,7 @@ import Calculadora from "./components/Calculadora";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Configuracion from "./components/Configuracion";
+import Team from "./components/Team";
 
 function App() {
 
@@ -17,16 +18,9 @@ function App() {
           <Route path="/" element={<Calculadora />} />
           <Route path="/login" element={<Login />} />
           <Route path="/configuracion" element={<Configuracion />} />
-
-          
+          <Route path="/team" element={<Team />} /> 
         </Routes>
       </BrowserRouter>
-
-
-
-
-
-    
     </>
    
   );

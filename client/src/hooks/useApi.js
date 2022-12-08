@@ -24,7 +24,7 @@ export function useApi(initialValue = "638407eb2aac88001c4e0ceb") {
     }).catch(err => console.log(err));
   };
 
-  const login = (user, pass)=>{
+  const login = (user, pass, openLoginError)=>{
     console.log(`username: ${user} password: ${pass}`);
 
     axios.get(`${url}users`).then((resp) => {
@@ -40,7 +40,7 @@ export function useApi(initialValue = "638407eb2aac88001c4e0ceb") {
           if(err){
             throw err
           }else if(!isMatch){
-            console.log("Password doesnt match");
+            openLoginError()
           }else{
             console.log("Password Matches");
             window.localStorage.setItem("login", JSON.stringify({user: usuario.user, idbase: usuario.idbase, logged: true}))
@@ -50,7 +50,7 @@ export function useApi(initialValue = "638407eb2aac88001c4e0ceb") {
         }) 
 
       } else{
-        console.log("Nombre de usuario incorrecto");
+        openLoginError()
       }
      
       

@@ -1,6 +1,25 @@
-.banner-container{
-  transition: 10s;
+@media only screen and (max-width: 991px) {
+  .no-display{
+    display: none !important;
+  }
 }
+.muestra0{
+  opacity: 0%;
+  /* display: none!important; */
+  transition: 3s;
+}
+
+.muestra1{
+  opacity: 100%;
+  /* display: flex; */
+  transition: 3s;
+}
+
+
+
+/* .banner-container{
+  transition: 10s;
+} */
 .elecciones-container{
   display: flex;
   justify-content: space-around;
@@ -34,6 +53,7 @@
 .banner-logo{
     width: 250px;
 }
+
 
 @media only screen and (min-width: 992px) {
   .banner-logo{

@@ -10,9 +10,6 @@ header {
   z-index: 1000;
 }
 
-.bg-dark{
- /*  background-color: #e1a325!important; */
-}
 
 .header-container{
   display: flex;
@@ -64,6 +61,14 @@ header {
 @media only screen and (min-width: 768px) {
   header {
     height: 65px;
+  }
+
+  .nav-link{
+    font-size: 1.2rem;
+  }
+
+  .sombra-header{
+    max-height: 65px;
   }
 
 }

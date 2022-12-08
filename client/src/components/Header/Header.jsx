@@ -70,7 +70,7 @@ function Header() {
             <header>
 
 
-                <nav className="navbar navbar-expand-md navbar-dark" style={{ backgroundColor: "#e1a325" }}>
+                <nav className="navbar navbar-expand-md navbar-dark sombra-header" style={{ backgroundColor: "#e1a325" }}>
                     <div className="container-fluid">
                         <Link to="/"><img className="header-logo ms-5" src={logo} alt="app logo" /></Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

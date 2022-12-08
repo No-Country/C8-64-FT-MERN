@@ -1,5 +1,5 @@
 import "./Colores.css"
-import lapiz from "../../assets/lapiz.jpg";
+import lapiz from "../../assets/Lapiz.png";
 import { BoolHook } from "../../hooks/BoolHook.js"
 
 
