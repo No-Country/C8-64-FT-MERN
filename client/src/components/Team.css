@@ -1,0 +1,38 @@
+.team-container{
+    min-height: calc(100vh - 130px);
+    /* min-height: 500px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.team-card{
+    margin: 15px;
+    height: 550px;
+    background-color: #b6b1b2;
+    border: 2px solid #e1a325;
+}
+
+.prueba-card{
+    background-color: #b6b1b2;
+    color: black;
+
+}
+
+.nombre{
+    font-weight: 700;
+}
+
+.funcion{
+    font-weight: 600;
+}

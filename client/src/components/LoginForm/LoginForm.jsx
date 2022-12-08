@@ -1,15 +1,19 @@
 import "./LoginForm.css"
 import logo from "../../assets/Logo Fondo Claro.png"
 import { useApi } from "../../hooks/useApi";
+import { BoolHook } from "../../hooks/BoolHook";
+import Modal from "../Modal/Modal";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
 
     const [, , login] = useApi();
+    const [isLoginError, openLoginError] = BoolHook(false)
 
     const test = (event) => {
         event.preventDefault();
         const { UserName, Password } = event.target
-        login(UserName.value, Password.value);
+        login(UserName.value, Password.value, openLoginError);
     }
 
 
@@ -25,10 +29,10 @@ function LoginForm() {
                                 <div className="row g-5 d-flex justify-content-center align-items-center" >
 
 
-                                    <div className=" col-md-5 d-flex justify-content-around align-items-start flex-column h-100 p-5" > 
+                                    <div className=" col-md-5 d-flex justify-content-around align-items-center align-items-md-start flex-column h-100 p-5" > 
+                                        <Link to={"/"}><img className="login-logo mb-5" src={logo} alt="app logo" /></Link>
                                         
-                                        <img className="login-logo mb-3" src={logo} alt="app logo" />
-                                        <h4>Dispersión te ayuda a que tu y tus clientes puedan tener una cotización en forma precisa y en segundos.</h4>
+                                        <h4 className=" text-sm-center text-md-start">ayuda a que tu y tus clientes puedan tener una cotización precisa en segundos.</h4>
                                     </div>
 
 
@@ -53,8 +57,7 @@ function LoginForm() {
                                                         <button className="btn btn-dark btn-lg btn-block form-control" type="submit" style={{ backgroundColor: "#e1a325", borderColor: "#e1a325" }}>Login</button>
                                                     </div>
 
-                                                    <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>Don't have an account? <a href="#!"
-                                                        style={{ color: "#393f81" }}>Contact Us</a></p>
+                                                    <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>Don't have an account? <Link to={"/team"} className="">Contact Us</Link></p>
 
                                                 </div>
 
@@ -73,6 +76,28 @@ function LoginForm() {
                 </div>
 
             </div>
+
+            <Modal isOpen={isLoginError} closeModal={openLoginError}>
+                        <div className="card text-center" style={{ width: " 18rem", backgroundColor: "black" }} >
+                            <div className="card-body ">
+                                <h5 className="card-title">
+                                    <div className="wrapper">
+                                        <div className="wrapper-wrong">
+
+                                        </div>
+                                    </div>
+                                </h5>
+                                <h6 className="card-subtitle mb-3">Nombre de usuario o contraseña incorrecta</h6>
+
+                                <div className="d-grid gap-2">
+                                    <button className="btn" onClick={() => openLoginError()} >Cerrar</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </Modal>
+
+            
 
 
 

@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+## Web app Cotizadora para tienda de serigrafía UNO-Textil 🙌
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+[Dispersión](https://dispersion.vercel.app/)
 
-In the project directory, you can run:
+Esta aplicacion consta de tres componentes principales: Calculadora, Login y un form para la actualización de la base de datos.
 
-### `npm start`
+## Correr la aplicacion en local 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ejecuta npm install para instalar las dependencias
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+```
+Ejectutar el cliente
 
-### `npm test`
+```bash
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Descripcion de lo realizado ✌
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Problema
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Se solicito realizar una app de cotización la cual tome los montos de una base de datos y realice los calculos dependiendo de las opciones elegidas. Además debe tener la opción de actualizar los costos de los productos.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Solucion
 
-### `npm run eject`
+Para el **cliente** de la aplicacion se utilizo React, ademas de ReactRouter para las rutas dinamicas, el estado se manejo con useState y Hooks creados específicamente para este proyecto, axios para la comunicación con el servidor, bcryptjs-react para validar la contraseña y por ultimo Bootstrap para manejar los estilos.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Cliente
+  * React
+  * bcryptjs-react
+  * Bootstrap
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+El servidor esta deployado en railway 
 
-## Learn More
+		`https://c8-64-ft-mern-production.up.railway.app/api/638407eb2aac88001c4e0ceb`
+    `https://c8-64-ft-mern-production.up.railway.app/api/updateBase/638407eb2aac88001c4e0ceb`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Deploy 🚀
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Puedes ver la aplicacion funcionando en produccion mediante este link: [DispersionApp](https://github.com/No-Country/C8-64-FT-MERN/tree/main/client) .
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 
+Si llegaste aqui gracias 🙏🏼 me gusta ser leido, Buen Dia!

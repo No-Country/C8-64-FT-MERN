@@ -18,7 +18,7 @@ import dyp from "../../assets/logos pequenos/d&p.png";
 
 import marca from "../../assets/Logo Fondo Claro.png"
 
-function Banner({ elecciones }) {
+function Banner({ elecciones, resultados }) {
 
     const opciones = {
         fondo: [claro, oscuro],
@@ -28,7 +28,7 @@ function Banner({ elecciones }) {
 
     return (
         <>
-            <div className="containter banner-container">
+            <div className={`containter banner-container muestra${resultados ? "1" : "0 no-display"}`}>
                 <img className="banner-logo" src={marca} alt="logo de la compañia" />
 
                 <div className="container elecciones-container">

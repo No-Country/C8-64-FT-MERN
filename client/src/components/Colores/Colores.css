@@ -111,7 +111,7 @@ input::-webkit-inner-spin-button {
   }
 
   .descripcion-colores {
-    top: 40px;
+    top: 60px;
   }
 
   .input-numbers {
@@ -139,7 +139,10 @@ input::-webkit-inner-spin-button {
 
   .form-label {
     position: absolute;
-    top: 73px;
+    top: 68px;
     font-size: .65rem ;
+  }
+  .descripcion-colores{
+    margin-top: 11px;
   }
 }
