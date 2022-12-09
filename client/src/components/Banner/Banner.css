@@ -1,26 +1,37 @@
-.banner-container{
-  transition: 10s;
+@media only screen and (max-width: 991px) {
+  .no-display {
+    display: none !important;
+  }
 }
-.elecciones-container{
+
+.muestra0 {
+  opacity: 0%;
+  transition: opacity .1s;
+}
+
+.muestra1 {
+  opacity: 100%;
+  transition: opacity 3s;
+}
+
+.elecciones-container {
   display: flex;
   justify-content: space-around;
   min-width: 290px;
 }
 
-.logo-eleccion{
-    
-    width: 15%;
-    position: relative;
+.logo-eleccion {
+  width: 15%;
+  position: relative;
   text-align: center;
-
 }
 
-.eleccion{
-    width: 100%;
-    z-index: 1;
+.eleccion {
+  width: 100%;
+  z-index: 1;
 }
 
-.numero{
+.numero {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,28 +42,31 @@
   font-weight: 600;
 }
 
-.banner-logo{
-    width: 250px;
+.banner-logo {
+  width: 250px;
 }
 
-@media only screen and (min-width: 992px) {
-  .banner-logo{
-    /* width: 150px;
-    margin-top: 20px; */
-    display: none
-}
+@media only screen and (min-width: 992px){ 
+  .banner-logo {
+    display: none;
+  }
 
-  .elecciones-container{
+  .elecciones-container {
     width: 100%;
     flex-wrap: wrap;
   }
 
-  .logo-eleccion{
-    
+  .logo-eleccion {
     width: 15%;
   }
-    
 
-
+  .numero{
+    font-size: 1.1rem;
+  }
 }
 
+@media only screen and (min-width: 1200px){ 
+  .numero{
+    font-size: 1.4rem;
+  }
+}

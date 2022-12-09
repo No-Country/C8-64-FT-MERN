@@ -3,7 +3,7 @@ import { useState } from "react";
 import { opcionesApp } from "../../utils/opcionesApp";
  
 function FondoPrenda({ resultados, setResultados, setElecciones }) {
-    const [eleccion, SetEleccion] = useState("null");
+    const [eleccion, SetEleccion] = useState("null"); //hook para que controle cual es la opcion elegida
 
     const {logosFondo} = opcionesApp();
 
@@ -19,15 +19,11 @@ function FondoPrenda({ resultados, setResultados, setElecciones }) {
 
     }
 
-   /*  const actualizarEleccion = (opcion)=>{
-        
-
-    } */
 
     return (
         <>
             <div className="containter fondo-prenda">
-                <h5 className="titulo-50">Seleccionar el fondo de la prenda</h5>
+                <h5 className="titulo-50 inter">Seleccionar el fondo de la prenda</h5>
                 <div className="containter opciones-containter">
 
 
@@ -36,14 +32,13 @@ function FondoPrenda({ resultados, setResultados, setElecciones }) {
                             <div
                         className={`icon-image ${eleccion === index && "rotacion"}`}
                         key={index}
-                        style={{ border: eleccion === index && ("2px solid #e1a325"), transform: eleccion === index && "rotateY(360deg)" }}
+                        
+                        style={{ backgroundColor: eleccion === index && ("#b6b1b2") , border: eleccion === index && "2px solid black", transform: eleccion === index && "rotateY(360deg)" }}
                         onClick={() => click(index)}
 
                     >
                         <div className="logos-container">
                         <img src={logo.icono} className="remera" alt="remera base" />
-                    <p className="descripcion">{logo.texto}</p>
-
                         </div>
                         
                         

@@ -1,5 +1,6 @@
 import "./Colores.css"
-import lapiz from "../../assets/lapiz.jpg";
+import lapiz from "../../assets/logos grandes/colores.png";
+import lapiz2 from "../../assets/logos grandes/prendas.png";
 import { BoolHook } from "../../hooks/BoolHook.js"
 
 
@@ -28,7 +29,7 @@ function Colores({ resultados, setResultados, setElecciones }) {
     return (
         <>
             <div className="containter colores-prenda">
-                <h5 className="titulo-50">Cantidad de Colores y prendas a Estampar</h5>
+                <h5 className="titulo-50 inter">Cantidad de Colores y prendas a Estampar</h5>
                 <div className="containter opciones-containter">
 
                     <div className={`icon-image ${colores && "rotacion"}`}
@@ -40,8 +41,6 @@ function Colores({ resultados, setResultados, setElecciones }) {
                             <div style={{ display: colores && "none" }}
                                 onClick={() => setColores()}>
                                 <img className="lapiz" src={lapiz} alt="colores" />
-                                <p className="descripcion-colores descripcion">Colores</p>
-
                             </div>
 
 
@@ -50,8 +49,8 @@ function Colores({ resultados, setResultados, setElecciones }) {
                                 <input type="number"
                                     name="colores"
                                     onChange={handleChange}
-                                    className="form-control input-numbers" id="exampleFormControlInput1" placeholder="0" />
-                                <label htmlFor="exampleFormControlInput1" className="form-label">Colores</label>
+                                    className="form-control input-numbers inter" id="exampleFormControlInput1" placeholder="0" />
+                                <label htmlFor="exampleFormControlInput1" className="form-label inter">Colores</label>
                             </div>
                         </div>
 
@@ -65,13 +64,8 @@ function Colores({ resultados, setResultados, setElecciones }) {
                         <div className="logos-container">
                             <div style={{ display: prendas && "none" }}
                                 onClick={() => setPrendas()}>
-                                <img className="lapiz" src={lapiz} alt="prendas"
-                                    style={{ display: prendas && "none" }}
-
-
-                                />
-                                <p className="descripcion descripcion-colores ">Prendas</p>
-
+                                <img className="lapiz" src={lapiz2} alt="prendas"
+                                    style={{ display: prendas && "none" }}/>
                             </div>
 
 
@@ -83,8 +77,8 @@ function Colores({ resultados, setResultados, setElecciones }) {
                                 <input type="number"
                                     name="prendas"
                                     onChange={handleChange}
-                                    className="form-control input-numbers" id="exampleFormControlInput2" placeholder="0" />
-                                <label htmlFor="exampleFormControlInput" className="form-label">Prendas</label>
+                                    className="form-control input-numbers inter" id="exampleFormControlInput2" placeholder="0" />
+                                <label htmlFor="exampleFormControlInput inter" className="form-label">Prendas</label>
 
                             </div>
 

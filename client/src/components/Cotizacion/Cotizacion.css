@@ -24,20 +24,21 @@
 
 .valores{
     margin-left: auto;
+    font-size: 1.1rem;
 }
 
 .items{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .total{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 900;
 }
 
 .leyenda{
     text-align: left;
-    font-size: 1rem;
+    font-size: .9rem;
     
 }
 
@@ -62,7 +63,7 @@
     .resultados-container{
         
         height: calc(100vh - 310px);
-        min-height: 350px;
+        min-height: 370px;
     }
 
    

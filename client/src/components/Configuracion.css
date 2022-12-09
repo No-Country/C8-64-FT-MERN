@@ -1,0 +1,38 @@
+
+.actualizar{
+    background-color: #e1a325;
+    border: #e1a325;
+}
+
+.actualizar:hover{
+    background-color: #be891f!important;
+    border: #e1a325;
+}
+
+.col-form-label{
+    text-align: left;
+}
+
+.tamano-letra{
+    font-size: 1.2rem;
+
+}
+
+
+@media only screen and (min-width: 992px) {
+    .configuracion-container{
+      min-height: 880px;
+      
+      height: calc(100vh - 130px);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+  .configuracion-container{
+    min-height: 690px;
+    
+    height: calc(100vh - 130px);
+  }
+}
+
+

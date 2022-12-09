@@ -5,22 +5,19 @@
   width: 100%;
   height: 176px;
 }
-
+ 
 .opciones-containter {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 10px;
-
-  
-
 }
 
-.logos-container{
+.logos-container {
   position: relative;
 }
 
-.rotacion{
+.rotacion {
   transition: transform 1s;
 }
 
@@ -35,139 +32,100 @@
 }
 
 .remera {
-  width: 75px;
+  width: 91px;
 }
 
 @media only screen and (min-width: 600px) {
- /*  .titulo-50 {
-    height: 40px;
-  } */
-
   .fondo-prenda {
     max-width: 50%;
   }
 }
 
 @media only screen and (min-width: 768px) {
-    
-  
-    .icon-image {
-      margin: 5px 15px;
-    }
-  
-    /* .opciones-containter {
-      justify-content:flex-start ;
-    } */
+  .icon-image {
+    margin: 5px 15px;
   }
+}
 
 @media only screen and (min-width: 992px) {
-  .fondo-prenda{
+  .fondo-prenda {
     height: 113px;
   }
 
+  .titulo-50 {
+    font-size: 1rem;
+    height: 35px;
+  }
 
-    .titulo-50{
-        font-size: 1rem;
-        height: 35px;
-    }
-  
   .icon-image {
     padding: 4px 1px;
     width: 58px;
     height: 58px;
     margin: 1px;
     position: relative;
-    
-
   }
 
-  
-
-  .logos-container{
+  .logos-container {
     height: 58px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* background-color: pink; */
     position: relative;
   }
 
- 
-
   .remera {
-    width: 30px;
+    width: 53px;
   }
-
 }
 
 @media only screen and (min-width: 1200px) {
-  .fondo-prenda{
+  .fondo-prenda {
     height: 125px;
   }
 
-
   .icon-image {
-    padding: 4px 1px;
+    padding: 2px 1px;
     width: 66px;
     height: 66px;
     margin: 3px;
     position: relative;
-
   }
 
-  .logos-container{
+  .logos-container {
     height: 66px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
   }
 
- 
-
   .remera {
-    width: 40px;
+    width: 63px;
   }
 }
 
 @media only screen and (min-width: 1400px) {
-  /* .titulo-50{
-    font-size: 1.03rem;
-  } */
-
-  .fondo-prenda{
+  .fondo-prenda {
     height: 171px;
-    /* justify-content: flex-start; */
   }
 
-  .opciones-containter{
+  .opciones-containter {
     margin-top: 0;
   }
 
-  
-
   .icon-image {
-    padding: 4px;
     width: 100px;
     height: 100px;
     margin-top: 15px;
   }
 
-  .logos-container{
+  .logos-container {
     height: auto;
   }
 
- 
-
   .remera {
-    width: 70px;
+    width: 93px;
   }
 
-  .descripcion{
-    position: absolute;
-    top: 75px;
-    font-size: .65rem !important;
-  }
 }

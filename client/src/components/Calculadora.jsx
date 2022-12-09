@@ -65,16 +65,9 @@ function Calculadora() {
         </div>
 
         <div className="container cotizacion-container" id="cotizacion">
-          {resultados && (
-            <>
-              <Banner elecciones={elecciones} />
-              <Cotizacion valores={valores} elecciones={elecciones} />
-              <img className="fondo-logo" src={logo} alt="logo de la compañia" />
-            </>)}
-          {(!resultados) && (
-            <>
-              <img className="rotacion-logo" src={logo} alt="logo de la compañia" />
-            </>)}
+          <Banner elecciones={elecciones} resultados={resultados} />
+          <Cotizacion valores={valores} elecciones={elecciones} resultados={resultados} />
+          <img className={`rotacion${resultados ? "1" : "0"}-logo rotacion-full`} src={logo} alt="logo de la compañia" />
 
         </div>
       </div>

@@ -121,7 +121,7 @@ function Cotizar({ resultados, setResultados, elecciones, setElecciones, valores
                                     onChange={handleOptions}
                                     name={name} />
                             </div>
-                            <input type="text" className="form-control non-clickable" aria-label="Text input with checkbox" value={texto} readOnly />
+                            <input type="text" className="form-control non-clickable inter" aria-label="Text input with checkbox" value={texto} readOnly />
                         </div>)
                 })}
 
@@ -129,15 +129,15 @@ function Cotizar({ resultados, setResultados, elecciones, setElecciones, valores
 
 
                 <div className="form-floating mb-3" style={{ display: !elecciones.opciones[1] && "none" }}>
-                    <input type="number" className="form-control valor-dolar" /* value={elecciones.cotizacion} */ id="floatingInput" placeholder="0" onChange={handleInput} />
-                    <label className="cotizacion-label" htmlFor="floatingInput">Ingresar la cotización del día</label>
+                    <input type="number" className="form-control valor-dolar" id="floatingInput" placeholder="0" onChange={handleInput} />
+                    <label className="cotizacion-label inter" htmlFor="floatingInput">Ingresar la cotización del día</label>
                 </div>
 
                 <a className="boton-prueba d-grid gap-2" href="#cotizacion">
-                    <button type="button" className="  btn-cotizar " href="#cotizacion" onClick={handleClick}>Cotizar</button>
+                    <button type="button" className="btn-cotizar inter" href="#cotizacion" onClick={handleClick}>Cotizar</button>
+                </a>
 
-
-                    <Modal isOpen={isOpenError} closeModal={openModalError}>
+                <Modal isOpen={isOpenError} closeModal={openModalError}>
                         <div className="card text-center" style={{ width: " 18rem", backgroundColor: "black" }} >
                             <div className="card-body ">
                                 <h5 className="card-title">
@@ -157,7 +157,6 @@ function Cotizar({ resultados, setResultados, elecciones, setElecciones, valores
                         </div>
                     </Modal>
 
-                </a>
 
             </div>
         </>
