@@ -25,16 +25,15 @@ export function useApi(initialValue = "638407eb2aac88001c4e0ceb") {
   };
 
   const login = (user, pass, openLoginError)=>{
-    console.log(`username: ${user} password: ${pass}`);
+    
 
     axios.get(`${url}users`).then((resp) => {
       
       const index = resp.data.findIndex((cuenta => cuenta.user === user ));
       const usuario = (resp.data[index]);
-      console.log(usuario);
+      
 
       if(index >= 0){
-        console.log("usuario encontrado");
 
         bcrypt.compare(pass, usuario.password, (err, isMatch)=>{
           if(err){
@@ -42,7 +41,6 @@ export function useApi(initialValue = "638407eb2aac88001c4e0ceb") {
           }else if(!isMatch){
             openLoginError()
           }else{
-            console.log("Password Matches");
             window.localStorage.setItem("login", JSON.stringify({user: usuario.user, idbase: usuario.idbase, logged: true}))
 
             window.location.replace("/configuracion");
@@ -63,14 +61,13 @@ export function useApi(initialValue = "638407eb2aac88001c4e0ceb") {
 
   const leerBD = () => {
     axios.get(`${url}content/${initialValue}`).then((resp) => {
-      console.log("entro");
       setDataBase(resp.data);
     }).catch(err => console.log(err));
   };
 
   const postDB = (newValue)=>{
 
-    console.log(newValue); 
+    
 
     axios.patch("https://c8-64-ft-mern-production.up.railway.app/api/updateBase/638407eb2aac88001c4e0ceb", newValue)
     .then(function (response) {

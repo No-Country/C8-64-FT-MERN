@@ -1,45 +1,37 @@
 @media only screen and (max-width: 991px) {
-  .no-display{
+  .no-display {
     display: none !important;
   }
 }
-.muestra0{
+
+.muestra0 {
   opacity: 0%;
-  /* display: none!important; */
-  transition: 3s;
+  transition: opacity .1s;
 }
 
-.muestra1{
+.muestra1 {
   opacity: 100%;
-  /* display: flex; */
-  transition: 3s;
+  transition: opacity 3s;
 }
 
-
-
-/* .banner-container{
-  transition: 10s;
-} */
-.elecciones-container{
+.elecciones-container {
   display: flex;
   justify-content: space-around;
   min-width: 290px;
 }
 
-.logo-eleccion{
-    
-    width: 15%;
-    position: relative;
+.logo-eleccion {
+  width: 15%;
+  position: relative;
   text-align: center;
-
 }
 
-.eleccion{
-    width: 100%;
-    z-index: 1;
+.eleccion {
+  width: 100%;
+  z-index: 1;
 }
 
-.numero{
+.numero {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -50,29 +42,31 @@
   font-weight: 600;
 }
 
-.banner-logo{
-    width: 250px;
+.banner-logo {
+  width: 250px;
 }
 
+@media only screen and (min-width: 992px){ 
+  .banner-logo {
+    display: none;
+  }
 
-@media only screen and (min-width: 992px) {
-  .banner-logo{
-    /* width: 150px;
-    margin-top: 20px; */
-    display: none
-}
-
-  .elecciones-container{
+  .elecciones-container {
     width: 100%;
     flex-wrap: wrap;
   }
 
-  .logo-eleccion{
-    
+  .logo-eleccion {
     width: 15%;
   }
-    
 
-
+  .numero{
+    font-size: 1.1rem;
+  }
 }
 
+@media only screen and (min-width: 1200px){ 
+  .numero{
+    font-size: 1.4rem;
+  }
+}

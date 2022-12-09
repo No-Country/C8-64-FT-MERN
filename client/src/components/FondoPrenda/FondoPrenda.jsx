@@ -3,7 +3,7 @@ import { useState } from "react";
 import { opcionesApp } from "../../utils/opcionesApp";
  
 function FondoPrenda({ resultados, setResultados, setElecciones }) {
-    const [eleccion, SetEleccion] = useState("null");
+    const [eleccion, SetEleccion] = useState("null"); //hook para que controle cual es la opcion elegida
 
     const {logosFondo} = opcionesApp();
 
@@ -19,10 +19,6 @@ function FondoPrenda({ resultados, setResultados, setElecciones }) {
 
     }
 
-   /*  const actualizarEleccion = (opcion)=>{
-        
-
-    } */
 
     return (
         <>
@@ -43,8 +39,6 @@ function FondoPrenda({ resultados, setResultados, setElecciones }) {
                     >
                         <div className="logos-container">
                         <img src={logo.icono} className="remera" alt="remera base" />
-                    <p className="descripcion inter">{logo.texto}</p>
-
                         </div>
                         
                         

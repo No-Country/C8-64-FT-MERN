@@ -5,10 +5,6 @@ import "./Cotizacion.css"
 function Cotizacion({ valores, elecciones, resultados }) {
 
 
-
-
-
-
     if (valores) {
 
         const matriceria = elecciones.opciones[0] ? ((valores.shablon[1] * elecciones.colores) * elecciones.cotizacion) : ((valores.shablon[0] * elecciones.colores) * elecciones.cotizacion)
@@ -68,23 +64,6 @@ function Cotizacion({ valores, elecciones, resultados }) {
                     </div>
                     <p className="leyenda inter">Suma del costo de matricería y el costo total de las prendas.</p>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
 
         )

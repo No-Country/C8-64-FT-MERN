@@ -3,7 +3,7 @@ import { useState } from "react";
 import { opcionesApp } from "../../utils/opcionesApp";
 
 function Tamano({resultados, setResultados, setElecciones}) {
-    const [eleccion, SetEleccion] = useState("null");
+    const [eleccion, SetEleccion] = useState("null"); //hook que controla cual es la opcion marcada
 
     const {logosEstampado} = opcionesApp();
 
@@ -37,8 +37,6 @@ function Tamano({resultados, setResultados, setElecciones}) {
                     >
                         <div className="logos-container">
                         <img className="remera" src={logo.icono} alt="fondo claro" />
-                    <p className="descripcion inter">{logo.texto}</p>
-
                         </div>
                         
                         

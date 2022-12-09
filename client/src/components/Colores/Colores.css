@@ -47,8 +47,7 @@ input::-webkit-inner-spin-button {
 }
 
 .lapiz {
-  width: 71px;
-  margin-top: 4px;
+  width: 91px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -73,13 +72,7 @@ input::-webkit-inner-spin-button {
 
 @media only screen and (min-width: 992px) {
   .lapiz {
-    width: 32px;
-    height: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    width: 53px;
   }
 
   .descripcion-colores {
@@ -105,9 +98,7 @@ input::-webkit-inner-spin-button {
 
 @media only screen and (min-width: 1200px) {
   .lapiz {
-    width: 38px;
-    height: 38px;
-    top: 2px;
+    width: 63px;
   }
 
   .descripcion-colores {
@@ -125,24 +116,21 @@ input::-webkit-inner-spin-button {
 }
 
 @media only screen and (min-width: 1400px) {
-  
   .lapiz {
-    width: 64px;
-    height: 64px;
-    top: 3px;
+    width: 93px;
   }
 
   .input-numbers {
     font-size: 1.7rem;
-   margin-top: 20px;
+    margin-top: 20px;
   }
 
   .form-label {
     position: absolute;
     top: 68px;
-    font-size: .65rem ;
+    font-size: 0.65rem;
   }
-  .descripcion-colores{
+  .descripcion-colores {
     margin-top: 11px;
   }
 }
