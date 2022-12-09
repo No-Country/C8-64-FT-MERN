@@ -129,7 +129,7 @@ function Cotizar({ resultados, setResultados, elecciones, setElecciones, valores
 
 
                 <div className="form-floating mb-3" style={{ display: !elecciones.opciones[1] && "none" }}>
-                    <input type="number" className="form-control valor-dolar" /* value={elecciones.cotizacion} */ id="floatingInput" placeholder="0" onChange={handleInput} />
+                    <input type="number" className="form-control valor-dolar" id="floatingInput" placeholder="0" onChange={handleInput} />
                     <label className="cotizacion-label inter" htmlFor="floatingInput">Ingresar la cotización del día</label>
                 </div>
 

@@ -225,13 +225,13 @@ function Configuracion() {
 
                                 <div className="d-flex justify-content-center gap-2">
 
-                                    <div class="d-grid col-6 mx-auto">
-                                        <button type="button" class="btn btn-outline-success" onClick={actualizarDB} >Continuar</button>
+                                    <div className="d-grid col-6 mx-auto">
+                                        <button type="button" className="btn btn-outline-success" onClick={actualizarDB} >Continuar</button>
 
                                     </div>
 
-                                    <div class="d-grid col-6 mx-auto">
-                                        <button type="button" class="btn btn-outline-danger" onClick={() => openModalAlert()}>Cancelar</button>
+                                    <div className="d-grid col-6 mx-auto">
+                                        <button type="button" className="btn btn-outline-danger" onClick={() => openModalAlert()}>Cancelar</button>
 
                                     </div>
                                 </div>

@@ -1,114 +1,99 @@
-.container-cotizar{
-    max-width: 360px;
-    
-
-
+.container-cotizar {
+  max-width: 360px;
 }
 
-.checkbox-container{
-    max-height: 40px;
+.checkbox-container {
+  max-height: 40px;
 }
 
-.valor-dolar{
-    text-align: center;
+.valor-dolar {
+  text-align: center;
 }
 
-.btn-cotizar{
-    background-color: #e1a325;
-    color: white;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-    margin-bottom: 50px;
-    /* width: 100px; */
-
+.btn-cotizar {
+  background-color: #e1a325;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 50px;
 }
 
-.non-clickable{
-    pointer-events: none;
+.non-clickable {
+  pointer-events: none;
 }
 
-.cotizacion-label{
-    font-size: 1rem;
+.cotizacion-label {
+  font-size: 1rem;
 }
 
-.boton-prueba{
-    text-decoration: none;
+.boton-prueba {
+  text-decoration: none;
 }
 
-.card-subtitle{
-    color: #e1a325;
+.card-subtitle {
+  color: #e1a325;
 }
 
-.btn{
-    color: white;
+.btn {
+  color: white;
 }
-
-
-
 
 @media only screen and (min-width: 992px) {
-    .container-cotizar{
-        max-width: 900px;
-        display: flex;
-        /* flex-direction: column; */
-        flex-wrap: wrap;
-        justify-content:space-around;
-    }
+  .container-cotizar {
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
-    .checkbox-container{
-        width: 200px;
-    }
+  .checkbox-container {
+    width: 200px;
+  }
 
-    .non-clickable{
-        font-size: .63rem;
-    }
+  .non-clickable {
+    font-size: 0.63rem;
+  }
 
-    .valor-dolar{
-        width: 200px !important;
-        height: 40px !important;
+  .valor-dolar {
+    width: 200px !important;
+    height: 40px !important;
+  }
 
-    }
+  .cotizacion-label {
+    font-size: 0.63rem;
+  }
 
-    .cotizacion-label{
-        font-size: .63rem;
-    }
-
-
-    .btn-cotizar{
-        width: 200px;
-        height: 40px;
-        padding: 3px;
-        font-size: 1rem;
-    }
+  .btn-cotizar {
+    width: 200px;
+    height: 40px;
+    padding: 3px;
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-    .checkbox-container{
-        width: 250px;
-    }
+  .checkbox-container {
+    width: 250px;
+  }
 
-    .non-clickable{
-        font-size: .85rem;
-    }
+  .non-clickable {
+    font-size: 0.85rem;
+  }
 
-    .valor-dolar{
-        width: 250px !important;
-        height: 40px !important;
+  .valor-dolar {
+    width: 250px !important;
+    height: 40px !important;
+  }
 
-    }
+  .cotizacion-label {
+    font-size: 0.85rem;
+  }
 
-    .cotizacion-label{
-        font-size: .85rem;
-    }
-
-
-
-    .btn-cotizar{
-        width: 250px;
-        height: 40px;
-        padding: 3px;
-        font-size: 1rem;
-    }
-
+  .btn-cotizar {
+    width: 250px;
+    height: 40px;
+    padding: 3px;
+    font-size: 1rem;
+  }
 }

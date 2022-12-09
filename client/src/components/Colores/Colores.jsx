@@ -1,5 +1,6 @@
 import "./Colores.css"
-import lapiz from "../../assets/Lapiz.png";
+import lapiz from "../../assets/logos grandes/colores.png";
+import lapiz2 from "../../assets/logos grandes/prendas.png";
 import { BoolHook } from "../../hooks/BoolHook.js"
 
 
@@ -40,8 +41,6 @@ function Colores({ resultados, setResultados, setElecciones }) {
                             <div style={{ display: colores && "none" }}
                                 onClick={() => setColores()}>
                                 <img className="lapiz" src={lapiz} alt="colores" />
-                                <p className="descripcion-colores descripcion inter">Colores</p>
-
                             </div>
 
 
@@ -65,13 +64,8 @@ function Colores({ resultados, setResultados, setElecciones }) {
                         <div className="logos-container">
                             <div style={{ display: prendas && "none" }}
                                 onClick={() => setPrendas()}>
-                                <img className="lapiz" src={lapiz} alt="prendas"
-                                    style={{ display: prendas && "none" }}
-
-
-                                />
-                                <p className="descripcion descripcion-colores inter">Prendas</p>
-
+                                <img className="lapiz" src={lapiz2} alt="prendas"
+                                    style={{ display: prendas && "none" }}/>
                             </div>
 
 
