@@ -1,8 +1,5 @@
-
 const {exportaBaseDatos} = require('../models/model');
 const {modelUser} = require('../models/user')
-
-
 
 module.exports = {
     //-------------------POSTS----------------------------------
@@ -95,7 +92,7 @@ module.exports = {
             res.status(500); 
         }
     },  
-    getUsers: async (req,res) => {
+    getUsers: async (res) => {
         try{
             const data = await modelUser.find();
             res.json(data)
