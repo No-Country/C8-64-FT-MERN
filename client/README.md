@@ -23,9 +23,9 @@ npm start
 
 ## Problema
 
-Se solicito realizar una app de cotización la cual tome los montos de una base de datos y realice los calculos dependiendo de las opciones elegidas. Además debe tener la opción de actualizar los costos de los productos.
+Se solicitó realizar una app de cotización la cual tome los montos de una base de datos y realice los calculos dependiendo de las opciones elegidas. Además debe tener la opción de actualizar los costos de los productos.
 
-## Solucion
+## Solución
 
 Para el **cliente** de la aplicacion se utilizo React, ademas de ReactRouter para las rutas dinamicas, el estado se manejo con useState y Hooks creados específicamente para este proyecto, axios para la comunicación con el servidor, bcryptjs-react para validar la contraseña y por ultimo Bootstrap para manejar los estilos.
 
