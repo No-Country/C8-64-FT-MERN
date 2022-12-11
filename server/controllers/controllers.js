@@ -92,7 +92,7 @@ module.exports = {
             res.status(500); 
         }
     },  
-    getUsers: async (res) => {
+    getUsers: async (req,res) => {
         try{
             const data = await modelUser.find();
             res.json(data)
