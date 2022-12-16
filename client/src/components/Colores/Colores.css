@@ -63,6 +63,7 @@ input::-webkit-inner-spin-button {
 @media only screen and (min-width: 600px) {
   .colores-prenda {
     width: 50%;
+    margin-top: 50px;
   }
 
   .opciones-containter {
@@ -71,6 +72,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media only screen and (min-width: 992px) {
+  .colores-prenda{
+    margin-top: 15px;
+  }
   .lapiz {
     width: 53px;
   }
@@ -116,6 +120,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media only screen and (min-width: 1400px) {
+  .colores-prenda{
+    margin-top: 50px;
+  }
   .lapiz {
     width: 93px;
   }

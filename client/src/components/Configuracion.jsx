@@ -5,6 +5,7 @@ import { useApi } from "../hooks/useApi";
 import { useEffect } from "react";
 import { BoolHook } from "../hooks/BoolHook";
 import Modal from "./Modal/Modal";
+import latigo from "../assets/latigo.gif"
 
 function Configuracion() {
 
@@ -48,7 +49,7 @@ function Configuracion() {
     const login = JSON.parse(window.localStorage.getItem("login")) || false;
     if (login.logged) {
 
-        if (dataBase !== null) {
+        if (dataBase !== null ) {
             return (
                 <div className="App" >
                     <Header />
@@ -263,6 +264,17 @@ function Configuracion() {
 
                 </div>
             );
+        }else{
+            return(
+                <div className="App" >
+                    <div className="message-container container mt-auto mb-auto">
+                    <img src={latigo} alt="" />
+                    <p className="inter" >Aguarde un momento mientras despertamos al Back-End.</p>
+
+                    </div>
+                
+                </div>
+            )
         }
 
 

@@ -5,7 +5,7 @@ import "./Cotizacion.css"
 function Cotizacion({ valores, elecciones, resultados }) {
 
 
-    if (valores) {
+    if (valores && elecciones.fondo !==null) {
 
         const matriceria = elecciones.opciones[0] ? ((valores.shablon[1] * elecciones.colores) * elecciones.cotizacion) : ((valores.shablon[0] * elecciones.colores) * elecciones.cotizacion)
         const precioXPrenda = (((valores.colores[elecciones.fondo][elecciones.pintura]) / (valores.rendimiento[elecciones.fondo][elecciones.estampado])) * elecciones.cotizacion);
@@ -33,7 +33,7 @@ function Cotizacion({ valores, elecciones, resultados }) {
                     <p className="leyenda inter">Costo calculado en base a la pintura por prenda y la cantidad a producir.</p>
                 </div>
 
-                <div>
+                <div> 
                     <div className="text-container subrayado">
                         <h4 className="items inter">Precio por prenda:</h4>
                         <p className="valores inter">{elecciones.cotizacion === 1? "U$D": "$"} {(Math.round(precioXPrenda * 100) / 100).toFixed(2)}</p>

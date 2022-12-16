@@ -32,26 +32,26 @@ function Banner({ elecciones, resultados }) {
                 <img className="banner-logo" src={marca} alt="logo de la compañia" />
 
                 <div className="container elecciones-container">
-                    <div className="logo-eleccion mt-4 mb-4">
+                    <div className="logo-eleccion ">
                         <img className="eleccion" src={opciones.fondo[elecciones.fondo]} alt="" />
 
                     </div>
-                    <div className="logo-eleccion mt-4 mb-4">
+                    <div className="logo-eleccion ">
 
                         <img className="eleccion" src={vacio} alt="" />
                         <p className="numero inter">{elecciones.colores}</p>
 
                     </div>
-                    <div className="logo-eleccion mt-4 mb-4">
+                    <div className="logo-eleccion ">
                         <img className="eleccion" src={vacio} alt="" />
                         <p className="numero inter">{elecciones.prendas}</p>
 
                     </div>
-                    <div className="logo-eleccion mt-4 mb-4">
+                    <div className="logo-eleccion ">
                         <img className="eleccion" src={opciones.estampado[elecciones.estampado]} alt="" />
 
                     </div>
-                    <div className="logo-eleccion mt-4 mb-4">
+                    <div className="logo-eleccion ">
                         <img className="eleccion" src={opciones.pintura[elecciones.pintura]} alt="" />
 
                     </div>

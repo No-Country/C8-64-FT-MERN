@@ -1,7 +1,6 @@
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
-import nicolas from "../assets/Team/nicolas.jpeg"
-import { opcionesApp } from "../utils/opcionesApp";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import { opcionesApp } from "../../utils/opcionesApp";
 import "./Team.css"
 
 function Team() {
@@ -10,10 +9,13 @@ function Team() {
     return (
         <>
             <Header />
-            <div className="team-container container">
-                <h2 className="team-title mt-5 inter">Team C8-64-FT-MERN</h2>
+            <div className="team-container container text-center">
+                <h2 className="team-title mt-5 mb-5 inter">Team C8-64-FT-MERN</h2>
 
                 <div className="cards-container">
+
+
+
                     {
                         integrantes.map(integrante => {
                             return (
@@ -41,9 +43,15 @@ function Team() {
                                         </ul>
                                     </div>
                                 </div>
-                                )
+
+                            )
                         })
                     }
+
+
+
+
+
 
                 </div>
 
