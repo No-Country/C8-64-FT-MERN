@@ -3,7 +3,7 @@ import Calculadora from "./components/Calculadora";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Configuracion from "./components/Configuracion";
-import Team from "./components/Team";
+import Team from "./components/Team/Team";
 
 function App() {
 

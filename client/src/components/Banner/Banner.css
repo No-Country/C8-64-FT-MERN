@@ -1,3 +1,11 @@
+.logo-eleccion {
+  width: 15%;
+  position: relative;
+  text-align: center;
+  margin: 30px 0;
+}
+
+
 @media only screen and (max-width: 991px) {
   .no-display {
     display: none !important;
@@ -58,6 +66,7 @@
 
   .logo-eleccion {
     width: 15%;
+    margin-top: 15px;
   }
 
   .numero{
@@ -69,4 +78,11 @@
   .numero{
     font-size: 1.4rem;
   }
+}
+
+@media only screen and (min-width: 1400px){ 
+  .logo-eleccion {
+    margin-top: 50px;
+  }
+  
 }

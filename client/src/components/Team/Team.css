@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+    /* text-align: center; */
 
 }
 
@@ -19,7 +20,7 @@
 
 .team-card{
     margin: 0px 15px 15px;
-    height: 530px;
+    min-height: 530px;
     background-color: #b6b1b2;
     border: 2px solid #e1a325;
 }

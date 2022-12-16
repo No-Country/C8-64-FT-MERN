@@ -97,12 +97,11 @@ function Cotizar({ resultados, setResultados, elecciones, setElecciones, valores
         }
 
 
-        valores === null && setValores()
+        valores.static && setValores()
 
 
 
         !resultados && setResultados();
-
     }
 
     return (

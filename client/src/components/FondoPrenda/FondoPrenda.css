@@ -38,6 +38,7 @@
 @media only screen and (min-width: 600px) {
   .fondo-prenda {
     max-width: 50%;
+    margin-top: 50px;
   }
 }
 
@@ -50,6 +51,7 @@
 @media only screen and (min-width: 992px) {
   .fondo-prenda {
     height: 113px;
+    margin-top: 15px;
   }
 
   .titulo-50 {
@@ -82,6 +84,7 @@
 @media only screen and (min-width: 1200px) {
   .fondo-prenda {
     height: 125px;
+    
   }
 
   .icon-image {
@@ -108,6 +111,7 @@
 @media only screen and (min-width: 1400px) {
   .fondo-prenda {
     height: 171px;
+    margin-top: 50px;
   }
 
   .opciones-containter {
